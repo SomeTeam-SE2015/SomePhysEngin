@@ -6,8 +6,9 @@ bool collides( SphereBody& body1, SphereBody& body2, real_t collision_damping )
 {
     // TODO detect collision. If there is one, update velocity
 	if ((body1.radius + body2.radius) * body1.radius + body2.radius
-		>= squared_length(body1.position - body2.position)) {
-		//collision happens
+		>= squared_length(body1.position - body2.position)) 
+	{
+		// collision happens
 		Vector3 totalMomentum = body1.velocity * body1.mass + body2.velocity * body2.mass;
 		Vector3 velocityDif = body1.velocity - body2.velocity;
 		real_t totalMass = body1.mass + body2.mass;
@@ -29,7 +30,15 @@ bool collides( SphereBody& body1, TriangleBody& body2, real_t collision_damping 
 bool collides( SphereBody& body1, PlaneBody& body2, real_t collision_damping )
 {
     // TODO detect collision. If there is one, update velocity
-
+	Vector3 normal = normalize(body2.normal);
+	Vector3 relative_posi = body1.position - body2.position;
+	if (dot(normal, relative_posi) <= body1.radius)
+	{
+		// collision happens
+		Vector3 perp_velocity = normal * dot(body1.velocity, normal);
+		body1.velocity -= perp_velocity * (1 + collision_damping);
+		return true;
+	}
 	return false;
 }
 
