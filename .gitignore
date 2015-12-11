@@ -55,6 +55,16 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
+reference/PhysicalEngine/p5out/msvc/[Dd]ebug/
+reference/PhysicalEngine/p5out/msvc/[Dd]ebugPublic/
+reference/PhysicalEngine/p5out/msvc/[Rr]elease/
+reference/PhysicalEngine/p5out/msvc/[Rr]eleases/
+reference/PhysicalEngine/p5out/msvc/x64/
+reference/PhysicalEngine/p5out/msvc/x86/
+reference/PhysicalEngine/p5out/msvc/build/
+reference/PhysicalEngine/p5out/msvc/bld/
+reference/PhysicalEngine/p5out/msvc/[Bb]in/
+reference/PhysicalEngine/p5out/msvc/[Oo]bj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
