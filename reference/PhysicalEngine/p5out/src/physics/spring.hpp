@@ -11,6 +11,7 @@ public:
     Spring();
     virtual ~Spring() {};
     void step( real_t dt );
+	real_t length();
 
     real_t constant;
     real_t equilibrium;

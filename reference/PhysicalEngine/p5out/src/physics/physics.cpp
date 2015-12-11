@@ -24,6 +24,27 @@ void Physics::step( real_t dt )
     // Note, when you change the position/orientation of a physics object,
     // change the position/orientation of the graphical object that represents
     // it
+
+	// collisions
+	for (SphereList::iterator collider = spheres.begin();
+		collider != spheres.end(); collider++)
+	{
+		for (SphereList::iterator collidee = spheres.begin();
+			collidee != spheres.end(); collidee++)
+		{
+			collides(**collider, **collidee, collision_damping);
+		}
+		for (PlaneList::iterator collidee = planes.begin();
+			collidee != planes.end(); collidee++)
+		{
+			collides(**collider, **collidee, collision_damping);
+		}
+		for (TriangleList::iterator collidee = triangles.begin();
+			collidee != triangles.end(); collidee++)
+		{
+			collides(**collider, **collidee, collision_damping);
+		}
+	}
 }
 
 void Physics::add_sphere( SphereBody* b )

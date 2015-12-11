@@ -16,6 +16,13 @@ Spring::Spring()
     damping = 0.0;
 }
 
+real_t Spring::length()
+{
+	Vector3 x1 = body1->position + body1->orientation * body1_offset;
+	Vector3 x2 = body2->position + body2->orientation * body2_offset;
+	return distance( x1, x2 );
+}
+
 void Spring::step( real_t dt )
 {
     // TODO apply forces to attached bodies
