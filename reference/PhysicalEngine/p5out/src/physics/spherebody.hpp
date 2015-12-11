@@ -22,6 +22,8 @@ public:
     virtual Vector3 step_position( real_t dt, real_t motion_damping );
     virtual Vector3 step_orientation( real_t dt, real_t motion_damping );
     virtual void apply_force( const Vector3& f, const Vector3& offset );
+	virtual void clear_force();
+	real_t angular_momentum() const;
 };
 
 }

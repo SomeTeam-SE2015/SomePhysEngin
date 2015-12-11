@@ -7,6 +7,17 @@
 #include <algorithm>
 
 namespace _462 {
+	
+real_t SphereBody::angular_momentum() const
+{
+	return 2 * this->mass * this->radius * this->radius / 5;
+}
+
+void SphereBody::clear_force()
+{
+	force = Vector3::Zero;
+	torque = Vector3::Zero;
+}
 
 SphereBody::SphereBody( Sphere* geom )
 {
