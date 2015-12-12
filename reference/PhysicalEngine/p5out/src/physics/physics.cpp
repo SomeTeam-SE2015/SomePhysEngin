@@ -32,7 +32,10 @@ void Physics::step( real_t dt )
 		for (SphereList::iterator collidee = spheres.begin();
 			collidee != spheres.end(); collidee++)
 		{
-			collides(**collider, **collidee, collision_damping);
+			if (collidee != collider)
+			{
+				collides(**collider, **collidee, collision_damping);
+			}
 		}
 		for (PlaneList::iterator collidee = planes.begin();
 			collidee != planes.end(); collidee++)
@@ -45,6 +48,22 @@ void Physics::step( real_t dt )
 			collides(**collider, **collidee, collision_damping);
 		}
 	}
+
+	// Evolision
+	update_status(dt);
+}
+
+void Physics::update_status(real_t dt)
+{
+	for (SphereList::iterator one = spheres.begin(); one != spheres.end(); one++)
+	{
+		(*one)->step_position(dt, 0);
+	}
+}
+
+void Physics::update_force()
+{
+	// TO DO: update interaction
 }
 
 void Physics::add_sphere( SphereBody* b )
