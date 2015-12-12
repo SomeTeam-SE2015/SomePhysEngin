@@ -37,9 +37,13 @@ Vector3 SphereBody::step_position( real_t dt, real_t motion_damping )
     // Note: This function is here as a hint for an approach to take towards
     // programming RK4, you should add more functions to help you or change the
     // scheme
-    // TODO return the delta in position dt in the future
-
-    return Vector3::Zero;
+    // return the delta in position dt in the future
+	// to the 1st order. RK4 is performed in class "physics"
+	Vector3 delta = velocity * dt;
+	position += delta;
+	velocity += force * (dt / mass) - velocity * (dt * motion_damping);
+	position += velocity * dt;
+    return delta;
 }
 
 Vector3 SphereBody::step_orientation( real_t dt, real_t motion_damping )
@@ -51,13 +55,26 @@ Vector3 SphereBody::step_orientation( real_t dt, real_t motion_damping )
     // vec.x = rotation along x axis
     // vec.y = rotation along y axis
     // vec.z = rotation along z axis
-
-    return Vector3::Zero;
+	// to the 1st order. RK4 is performed in class "physics"
+	Vector3 delta = angular_velocity * dt;
+	// orientation += Quaternion(0, delta.x, delta.y, delta.z) * orientation;
+	orientation = Quaternion(delta, length(delta)) * orientation;
+	angular_velocity += torque / angular_momentum();
+    return delta;
 }
 
-void SphereBody::apply_force( const Vector3& f, const Vector3& offset )
+void SphereBody::apply_force(const Vector3& f, const Vector3& offset)
 {
-    // TODO apply force/torque to sphere
+	// apply force/torque to sphere
+	force += f;
+	torque += cross(offset, f);
+}
+
+void SphereBody::apply_force_static(const Vector3& f, const Vector3& offset)
+{
+	// apply force/torque to sphere
+	force_static += f;
+	torque_static += cross(offset, f);
 }
 
 }
