@@ -6,6 +6,8 @@
 #include "physics/trianglebody.hpp"
 #include "physics/planebody.hpp"
 
+#define MIN_V_SQ 1E-6
+
 namespace _462 {
 
 bool collides( SphereBody& body1, SphereBody& body2, real_t collision_damping );

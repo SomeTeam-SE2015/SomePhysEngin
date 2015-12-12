@@ -1,4 +1,5 @@
 #include "physics/physics.hpp"
+#include <iostream>
 
 namespace _462 {
 
@@ -26,9 +27,11 @@ void Physics::step( real_t dt )
     // it
 
 	// collisions
+	//std::cout << "num planes" << num_planes() << std::endl;
 	for (SphereList::iterator collider = spheres.begin();
 		collider != spheres.end(); collider++)
 	{
+		//if ( (*collider)->position.y <= 0 )
 		for (SphereList::iterator collidee = spheres.begin();
 			collidee != spheres.end(); collidee++)
 		{
@@ -40,16 +43,22 @@ void Physics::step( real_t dt )
 		for (PlaneList::iterator collidee = planes.begin();
 			collidee != planes.end(); collidee++)
 		{
-			collides(**collider, **collidee, collision_damping);
+			if (collides(**collider, **collidee, collision_damping)) {
+				//std::cout << "Plane" << (*collidee)->id << ":" << (*collidee)->position << std::endl;
+			}
+			
 		}
 		for (TriangleList::iterator collidee = triangles.begin();
 			collidee != triangles.end(); collidee++)
 		{
-			collides(**collider, **collidee, collision_damping);
+			if (collides(**collider, **collidee, collision_damping)) {
+				//std::cout << "Tri" << (*collidee)->id << ":" << (*collider)->velocity << std::endl;
+			}
 		}
 	}
 
 	// Evolision
+	update_force();
 	update_status(dt);
 }
 
@@ -58,11 +67,18 @@ void Physics::update_status(real_t dt)
 	for (SphereList::iterator one = spheres.begin(); one != spheres.end(); one++)
 	{
 		(*one)->step_position(dt, 0);
+		//std::cout << (*one)->id << ":" << (*one)->position << std::endl;
 	}
 }
 
 void Physics::update_force()
 {
+	// initial: clear and apply gravity
+	for (SphereList::iterator one = spheres.begin(); one != spheres.end(); one++)
+	{
+		(*one)->clear_force();
+		(*one)->apply_force(gravity * (*one)->mass, Vector3::Zero);
+	}
 	// TO DO: update interaction
 }
 

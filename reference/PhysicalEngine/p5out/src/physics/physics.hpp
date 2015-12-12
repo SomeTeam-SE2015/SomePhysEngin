@@ -46,6 +46,9 @@ private:
     SphereList spheres;
     PlaneList planes;
     TriangleList triangles;
+
+	virtual void update_force();
+	virtual void update_status(real_t dt);
 };
 
 }
