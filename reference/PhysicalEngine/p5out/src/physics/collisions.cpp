@@ -11,10 +11,10 @@ bool collides( SphereBody& body1, SphereBody& body2, real_t collision_damping )
 	{
 		// collision happens
 		Vector3 totalMomentum = body1.velocity * body1.mass + body2.velocity * body2.mass;
-		Vector3 velocityDif = body1.velocity - body2.velocity;
+		Vector3 velocityDif = (body1.velocity - body2.velocity) * (1-collision_damping);
 		real_t totalMass = body1.mass + body2.mass;
-		body1.velocity = (totalMomentum - velocityDif*collision_damping*body2.mass) / totalMass;
-		body2.velocity = (totalMomentum + velocityDif*collision_damping*body1.mass) / totalMass;
+		body1.velocity = (totalMomentum - velocityDif*body2.mass) / totalMass;
+		body2.velocity = (totalMomentum + velocityDif*body1.mass) / totalMass;
 		return true;
 	}
 

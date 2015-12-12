@@ -6,7 +6,7 @@
 #include "physics/trianglebody.hpp"
 #include "physics/planebody.hpp"
 
-#define MIN_V_SQ 1E-6
+#define MIN_V_SQ 1E-10
 
 namespace _462 {
 
