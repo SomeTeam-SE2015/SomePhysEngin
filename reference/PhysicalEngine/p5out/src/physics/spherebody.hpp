@@ -27,6 +27,10 @@ public:
 	virtual void apply_force_static(const Vector3& f, const Vector3& offset);
 	virtual void clear_force();
 	virtual real_t angular_momentum() const;
+	void inline update_geom() {
+		sphere->position = position;
+		sphere->orientation = orientation;
+	}
 };
 
 }

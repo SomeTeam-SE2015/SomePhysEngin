@@ -57,34 +57,90 @@ void Physics::step( real_t dt )
 		}
 	}
 
-	// Evolision
+	// Evolision: RK4
+	for (int n = 0; n < spheres.size(); n++)
+	{
+		v0s[n] = spheres[n]->velocity;
+		x0s[n] = spheres[n]->position;
+	}
 	update_force();
-	update_status(dt);
-}
+	for (int n = 0; n < spheres.size(); n++)
+	{
+		spheres[n]->step_position(dt / 2, 0);
+		rk4_dvdt[n] = (spheres[n]->velocity - v0s[n]); // k1 * dt / 2
+		rk4_dxdt[n] = (spheres[n]->position - x0s[n]);
+	}
+	update_force();
+	for (int n = 0; n < spheres.size(); n++)
+	{
+		spheres[n]->step_position(dt / 2, 0);
+		rk4_dvt[n] = (spheres[n]->velocity - v0s[n]); // k2 * dt / 2
+		rk4_dxt[n] = (spheres[n]->position - x0s[n]);
+		spheres[n]->velocity = v0s[n] + rk4_dvt[n];
+		spheres[n]->position = x0s[n] + rk4_dxt[n];
+	}
+	update_force();
+	for (int n = 0; n < spheres.size(); n++)
+	{
+		spheres[n]->step_position(dt / 2, 0);
+		rk4_dvm[n] = (spheres[n]->velocity - v0s[n]); // k3 * dt / 2
+		rk4_dxm[n] = (spheres[n]->position - x0s[n]);
+		spheres[n]->velocity = v0s[n] + rk4_dvm[n];
+		spheres[n]->position = x0s[n] + rk4_dxm[n];
+		rk4_dvm[n] += rk4_dvt[n]; // k2 + k3
+		rk4_dxm[n] += rk4_dxt[n];
+	}
+	update_force();
+	for (int n = 0; n < spheres.size(); n++)
+	{
+		spheres[n]->step_position(dt / 2, 0);
+		rk4_dvt[n] = (spheres[n]->velocity - v0s[n]); // k4 * dt / 2
+		rk4_dxt[n] = (spheres[n]->position - x0s[n]);
+		spheres[n]->velocity = v0s[n] + (rk4_dvdt[n] + 2*rk4_dvm[n] + rk4_dvt[n]) / 3;
+		// (k1 + 2 k2 + 2 k3 + k4) * dt /6
+		spheres[n]->position = x0s[n] + (rk4_dxdt[n] + 2 * rk4_dxm[n] + rk4_dxt[n]) / 3;
+	}
 
-void Physics::update_status(real_t dt)
-{
+	//update sphere geom
 	for (SphereList::iterator one = spheres.begin(); one != spheres.end(); one++)
 	{
-		(*one)->step_position(dt, 0);
-		//std::cout << (*one)->id << ":" << (*one)->position << std::endl;
+		(*one)->update_geom();
 	}
 }
 
 void Physics::update_force()
 {
-	// initial: clear and apply gravity
-	for (SphereList::iterator one = spheres.begin(); one != spheres.end(); one++)
+	if (static_force_not_initied) //initial for gravity
 	{
-		(*one)->clear_force();
-		(*one)->apply_force(gravity * (*one)->mass, Vector3::Zero);
+		for (SphereList::iterator one = spheres.begin(); one != spheres.end(); one++)
+		{
+			(*one)->apply_force_static(gravity * (*one)->mass, Vector3::Zero);
+		}
+		static_force_not_initied = false;
 	}
-	// TO DO: update interaction
+	// initial: clear and apply gravity
+	if (num_springs() != 0)
+	{
+		for (SphereList::iterator one = spheres.begin(); one != spheres.end(); one++)
+		{
+			(*one)->clear_force();
+			// TO DO: update interaction
+		}
+	}
 }
 
 void Physics::add_sphere( SphereBody* b )
 {
     spheres.push_back( b );
+
+	v0s.push_back(Vector3::Zero);
+	x0s.push_back(Vector3::Zero);
+	rk4_dvdt.push_back(Vector3::Zero);
+	rk4_dxdt.push_back(Vector3::Zero);
+	rk4_dvm.push_back(Vector3::Zero);
+	rk4_dxm.push_back(Vector3::Zero);
+	rk4_dvt.push_back(Vector3::Zero);
+	rk4_dxt.push_back(Vector3::Zero);
 }
 
 size_t Physics::num_spheres() const
@@ -144,6 +200,7 @@ void Physics::reset()
     
     gravity = Vector3::Zero;
 	collision_damping = 0.0;
+	static_force_not_initied = true;
 }
 
 }
