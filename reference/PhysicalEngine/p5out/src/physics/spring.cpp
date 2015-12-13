@@ -20,8 +20,8 @@ void Spring::apply()
 {
     // apply forces to attached bodies
 	Vector3 direction = display();
-	Vector3 force = direction * ((1 - equilibrium / length(direction)) * constant)
-		-(1 - damping)*(body2->velocity - body1->velocity);
+	Vector3 force = direction * ((1 - equilibrium / length(direction)) * constant
+		+ damping*dot(body2->velocity - body1->velocity, direction)/squared_length(direction));
 
 	body1->apply_force(force, body1_offset);
 	body2->apply_force(-force, body2_offset);

@@ -23,10 +23,30 @@ public:
     virtual ~SphereBody() { }
     virtual Vector3 step_position( real_t dt, real_t motion_damping );
 	virtual Vector3 step_orientation(real_t dt, real_t motion_damping);
-	virtual void apply_force(const Vector3& f, const Vector3& offset);
-	virtual void apply_force_static(const Vector3& f, const Vector3& offset);
-	virtual void clear_force();
-	virtual real_t angular_momentum() const;
+	virtual void get_step(Vector3& vdif, Vector3& xdif, real_t motion_damping = 0);
+
+	virtual real_t angular_momentum() const
+	{
+		return 2 * this->mass * this->radius * this->radius / 5;
+	};
+	virtual void apply_force(const Vector3& f, const Vector3& offset)
+	{
+		// apply force/torque to sphere
+		force += f;
+		torque += cross(offset, f);
+	};
+	virtual void apply_force_static(const Vector3& f, const Vector3& offset)
+	{
+		// apply force/torque to sphere
+		force_static = f;
+		torque_static = cross(offset, f);
+	};
+	virtual void clear_force()
+	{
+		force = Vector3::Zero;
+		torque = Vector3::Zero;
+	};
+
 	void inline update_geom() {
 		sphere->position = position;
 		sphere->orientation = orientation;

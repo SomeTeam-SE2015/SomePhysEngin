@@ -7,18 +7,6 @@
 #include <algorithm>
 
 namespace _462 {
-	
-real_t SphereBody::angular_momentum() const
-{
-	return 2 * this->mass * this->radius * this->radius / 5;
-}
-
-void SphereBody::clear_force()
-{
-	force = Vector3::Zero;
-	torque = Vector3::Zero;
-}
-
 SphereBody::SphereBody( Sphere* geom )
 {
     sphere = geom;
@@ -34,7 +22,7 @@ SphereBody::SphereBody( Sphere* geom )
 	torque_static = Vector3::Zero;
 }
 
-Vector3 SphereBody::step_position( real_t dt, real_t motion_damping )
+Vector3 SphereBody::step_position( real_t dt, real_t motion_damping )//damping ÒÑ°üº¬ dt?!!
 {
     // Note: This function is here as a hint for an approach to take towards
     // programming RK4, you should add more functions to help you or change the
@@ -44,7 +32,7 @@ Vector3 SphereBody::step_position( real_t dt, real_t motion_damping )
 	Vector3 delta = velocity * dt;
 	position += delta;
 	velocity += (force + force_static) * (dt / mass) - velocity * (dt * motion_damping);
-	velocity *= (1 - motion_damping);
+	//velocity *= (1 - motion_damping);
 	position += velocity * dt;
     return delta;
 }
@@ -66,18 +54,9 @@ Vector3 SphereBody::step_orientation( real_t dt, real_t motion_damping )
     return delta;
 }
 
-void SphereBody::apply_force(const Vector3& f, const Vector3& offset)
+void SphereBody::get_step(Vector3& vdif, Vector3& xdif, real_t motion_damping)
 {
-	// apply force/torque to sphere
-	force += f;
-	torque += cross(offset, f);
+	vdif = (force + force_static) / mass - velocity * (motion_damping);
+	xdif = velocity;
 }
-
-void SphereBody::apply_force_static(const Vector3& f, const Vector3& offset)
-{
-	// apply force/torque to sphere
-	force_static += f;
-	torque_static += cross(offset, f);
-}
-
 }
