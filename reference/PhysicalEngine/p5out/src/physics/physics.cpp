@@ -61,53 +61,6 @@ void Physics::step( real_t dt )
 	}
 
 	// Evolision: RK4
-	/*for (size_t n = 0; n < spheres.size(); n++)
-	{
-		update_force();
-		spheres[n]->step_position(dt, 0);
-	}*/
-	
-	/*for (size_t n = 0; n < spheres.size(); n++)
-	{
-		v0s[n] = spheres[n]->velocity;
-		x0s[n] = spheres[n]->position;
-	}
-	update_force();
-	for (size_t n = 0; n < spheres.size(); n++)
-	{
-		spheres[n]->step_position(dt / 2, 0);
-		rk4_dvdt[n] = (spheres[n]->velocity - v0s[n]); // k1 * dt / 2
-		rk4_dxdt[n] = (spheres[n]->position - x0s[n]);
-	}
-	update_force();
-	for (size_t n = 0; n < spheres.size(); n++)
-	{
-		spheres[n]->step_position(dt / 2, 0);
-		rk4_dvt[n] = (spheres[n]->velocity - v0s[n] - rk4_dvdt[n]); // k2 * dt / 2
-		rk4_dxt[n] = (spheres[n]->position - x0s[n] - rk4_dxdt[n]);
-		spheres[n]->velocity = v0s[n] + rk4_dvt[n];
-		spheres[n]->position = x0s[n] + rk4_dxt[n];
-	}
-	update_force();
-	for (size_t n = 0; n < spheres.size(); n++)
-	{
-		spheres[n]->step_position(dt / 2, 0);
-		rk4_dvm[n] = (spheres[n]->velocity - v0s[n] - rk4_dvt[n]); // k3 * dt / 2
-		rk4_dxm[n] = (spheres[n]->position - x0s[n] - rk4_dxt[n]);
-		spheres[n]->velocity = v0s[n] + rk4_dvm[n] * 2;
-		spheres[n]->position = x0s[n] + rk4_dxm[n] * 2;
-	}
-	update_force();
-	for (size_t n = 0; n < spheres.size(); n++)
-	{
-		spheres[n]->step_position(dt / 2, 0);
-		rk4_dvm[n] = (spheres[n]->velocity - v0s[n]); // (k4 + 2k3) * dt / 2
-		rk4_dvm[n] = (spheres[n]->position - x0s[n]);
-		spheres[n]->velocity = v0s[n] + (rk4_dvdt[n] + rk4_dvm[n] + 2 * rk4_dvt[n]) / 3;
-		// (k1 + 2 k2 + 2 k3 + k4) * dt /6
-		spheres[n]->position = x0s[n] + (rk4_dxdt[n] + rk4_dxm[n] + 2 * rk4_dxt[n]) / 3;
-	}*/
-
 	for (size_t n = 0; n < spheres.size(); n++)
 	{
 		v0s[n] = spheres[n]->velocity;
