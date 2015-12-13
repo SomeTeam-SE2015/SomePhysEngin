@@ -3,7 +3,7 @@
 
 #include "scene/sphere.hpp"
 #include "physics/body.hpp"
-
+#define MIN_OMEGA 1E-6
 namespace _462 {
 
 class Sphere;
