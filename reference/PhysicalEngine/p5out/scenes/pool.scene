@@ -296,6 +296,7 @@
         <body>
             <id i="1"/>
             <mass v="1.0"/>
+            <velocity x="0.0" y="0.0" z="1.0"/>
         </body>
     </sphere>
     
