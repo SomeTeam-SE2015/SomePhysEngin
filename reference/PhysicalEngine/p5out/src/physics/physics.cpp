@@ -37,7 +37,10 @@ void Physics::step( real_t dt )
 		{
 			if (collidee != collider)
 			{
-				collides(**collider, **collidee, collision_damping);
+				if (collides(**collider, **collidee, collision_damping)) {
+					//std::cout << "Sphere" << (*collidee)->id << ":" << (*collidee)->velocity << std::endl;
+					//std::cout << "Sphere" << (*collider)->id << ":" << (*collider)->velocity << std::endl;
+				}
 			}
 		}
 		for (PlaneList::iterator collidee = planes.begin();
@@ -58,47 +61,87 @@ void Physics::step( real_t dt )
 	}
 
 	// Evolision: RK4
-	for (int n = 0; n < spheres.size(); n++)
+	/*for (size_t n = 0; n < spheres.size(); n++)
+	{
+		update_force();
+		spheres[n]->step_position(dt, 0);
+	}*/
+	
+	/*for (size_t n = 0; n < spheres.size(); n++)
 	{
 		v0s[n] = spheres[n]->velocity;
 		x0s[n] = spheres[n]->position;
 	}
 	update_force();
-	for (int n = 0; n < spheres.size(); n++)
+	for (size_t n = 0; n < spheres.size(); n++)
 	{
 		spheres[n]->step_position(dt / 2, 0);
 		rk4_dvdt[n] = (spheres[n]->velocity - v0s[n]); // k1 * dt / 2
 		rk4_dxdt[n] = (spheres[n]->position - x0s[n]);
 	}
 	update_force();
-	for (int n = 0; n < spheres.size(); n++)
+	for (size_t n = 0; n < spheres.size(); n++)
 	{
 		spheres[n]->step_position(dt / 2, 0);
-		rk4_dvt[n] = (spheres[n]->velocity - v0s[n]); // k2 * dt / 2
-		rk4_dxt[n] = (spheres[n]->position - x0s[n]);
+		rk4_dvt[n] = (spheres[n]->velocity - v0s[n] - rk4_dvdt[n]); // k2 * dt / 2
+		rk4_dxt[n] = (spheres[n]->position - x0s[n] - rk4_dxdt[n]);
 		spheres[n]->velocity = v0s[n] + rk4_dvt[n];
 		spheres[n]->position = x0s[n] + rk4_dxt[n];
 	}
 	update_force();
-	for (int n = 0; n < spheres.size(); n++)
+	for (size_t n = 0; n < spheres.size(); n++)
 	{
 		spheres[n]->step_position(dt / 2, 0);
-		rk4_dvm[n] = (spheres[n]->velocity - v0s[n]); // k3 * dt / 2
-		rk4_dxm[n] = (spheres[n]->position - x0s[n]);
-		spheres[n]->velocity = v0s[n] + rk4_dvm[n];
-		spheres[n]->position = x0s[n] + rk4_dxm[n];
-		rk4_dvm[n] += rk4_dvt[n]; // k2 + k3
+		rk4_dvm[n] = (spheres[n]->velocity - v0s[n] - rk4_dvt[n]); // k3 * dt / 2
+		rk4_dxm[n] = (spheres[n]->position - x0s[n] - rk4_dxt[n]);
+		spheres[n]->velocity = v0s[n] + rk4_dvm[n] * 2;
+		spheres[n]->position = x0s[n] + rk4_dxm[n] * 2;
+	}
+	update_force();
+	for (size_t n = 0; n < spheres.size(); n++)
+	{
+		spheres[n]->step_position(dt / 2, 0);
+		rk4_dvm[n] = (spheres[n]->velocity - v0s[n]); // (k4 + 2k3) * dt / 2
+		rk4_dvm[n] = (spheres[n]->position - x0s[n]);
+		spheres[n]->velocity = v0s[n] + (rk4_dvdt[n] + rk4_dvm[n] + 2 * rk4_dvt[n]) / 3;
+		// (k1 + 2 k2 + 2 k3 + k4) * dt /6
+		spheres[n]->position = x0s[n] + (rk4_dxdt[n] + rk4_dxm[n] + 2 * rk4_dxt[n]) / 3;
+	}*/
+
+	for (size_t n = 0; n < spheres.size(); n++)
+	{
+		v0s[n] = spheres[n]->velocity;
+		x0s[n] = spheres[n]->position;
+	}
+	update_force();
+	for (size_t n = 0; n < spheres.size(); n++)
+	{
+		spheres[n]->get_step(rk4_dvdt[n], rk4_dxdt[n]); // k1
+		spheres[n]->velocity = v0s[n] + rk4_dvdt[n] * dt / 2;
+		spheres[n]->position = x0s[n] + rk4_dxdt[n] * dt / 2;
+	}
+	update_force();
+	for (size_t n = 0; n < spheres.size(); n++)
+	{
+		spheres[n]->get_step(rk4_dvt[n], rk4_dxt[n]); // k2
+		spheres[n]->velocity = v0s[n] + rk4_dvt[n] * dt / 2;
+		spheres[n]->position = x0s[n] + rk4_dxt[n] * dt / 2;
+	}
+	update_force();
+	for (size_t n = 0; n < spheres.size(); n++)
+	{
+		spheres[n]->get_step(rk4_dvm[n], rk4_dxm[n]); //k3
+		spheres[n]->velocity = v0s[n] + rk4_dvm[n] * dt;
+		spheres[n]->position = x0s[n] + rk4_dxm[n] * dt;
+		rk4_dvm[n] += rk4_dvt[n]; //k2 + k3
 		rk4_dxm[n] += rk4_dxt[n];
 	}
 	update_force();
-	for (int n = 0; n < spheres.size(); n++)
+	for (size_t n = 0; n < spheres.size(); n++)
 	{
-		spheres[n]->step_position(dt / 2, 0);
-		rk4_dvt[n] = (spheres[n]->velocity - v0s[n]); // k4 * dt / 2
-		rk4_dxt[n] = (spheres[n]->position - x0s[n]);
-		spheres[n]->velocity = v0s[n] + (rk4_dvdt[n] + 2*rk4_dvm[n] + rk4_dvt[n]) / 3;
-		// (k1 + 2 k2 + 2 k3 + k4) * dt /6
-		spheres[n]->position = x0s[n] + (rk4_dxdt[n] + 2 * rk4_dxm[n] + rk4_dxt[n]) / 3;
+		spheres[n]->get_step(rk4_dvt[n], rk4_dxt[n]); //k4
+		spheres[n]->velocity = v0s[n] + (rk4_dvdt[n] + 2 * rk4_dvm[n] + rk4_dvt[n]) * dt / 6;
+		spheres[n]->position = x0s[n] + (rk4_dxdt[n] + 2 * rk4_dxm[n] + rk4_dxt[n]) * dt / 6;
 	}
 
 	//update sphere geom
@@ -118,13 +161,16 @@ void Physics::update_force()
 		}
 		static_force_not_initied = false;
 	}
-	// initial: clear and apply gravity
+	// initial: clear and apply non_static
 	if (num_springs() != 0)
 	{
 		for (SphereList::iterator one = spheres.begin(); one != spheres.end(); one++)
 		{
 			(*one)->clear_force();
-			// TO DO: update interaction
+		}
+		for (SpringList::iterator sp = springs.begin(); sp != springs.end(); sp++)
+		{
+			(*sp)->apply();
 		}
 	}
 }
