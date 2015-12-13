@@ -18,6 +18,15 @@ public:
     Vector3 velocity;
     Vector3 angular_velocity;
 
+	/* typedef struct { // Struct to combine status for position
+		Vector3 v;
+		Vector3 x;
+	} v_and_x; 
+	typedef struct { // Struct to combine status for orientation
+		Vector3 omega;
+		Quaternion theta;
+	} omega_and_theta;*/
+
     virtual ~Body() { }
     virtual Vector3 step_position( real_t dt, real_t motion_damping ) = 0;
     virtual Vector3 step_orientation( real_t dt, real_t motion_damping ) = 0;

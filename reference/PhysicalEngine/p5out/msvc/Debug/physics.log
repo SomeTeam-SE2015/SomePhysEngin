@@ -1,20 +1,39 @@
-﻿Build started 2013/10/13 9:52:14.
-     1>Project "E:\2013下半年\English graphicss\图形学课程\Projects-Part3\PhysicalEngine\p5out\msvc\physics.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
-         Creating "Debug\physics.unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
-         All outputs are up-to-date.
-       ManifestResourceCompile:
-         All outputs are up-to-date.
+﻿生成启动时间为 15/12/13 下午 4:36:40。
+     1>项目“D:\class\SoftwareEngineering\SomePhysEngin\reference\PhysicalEngine\p5out\msvc\physics.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ID:\class\SoftwareEngineering\SomePhysEngin\reference\PhysicalEngine\p5out\msvc\include /ID:\class\SoftwareEngineering\SomePhysEngin\reference\PhysicalEngine\p5out\msvc\..\src /ZI /nologo /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\physics\physics.cpp
+         physics.cpp
        Link:
-         All outputs are up-to-date.
-       Manifest:
-         All outputs are up-to-date.
-       FinalizeBuildStatus:
-         Deleting file "Debug\physics.unsuccessfulbuild".
-         Touching "Debug\physics.lastbuildstate".
-     1>Done Building Project "E:\2013下半年\English graphicss\图形学课程\Projects-Part3\PhysicalEngine\p5out\msvc\physics.vcxproj" (build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\class\SoftwareEngineering\SomePhysEngin\reference\PhysicalEngine\p5out\msvc\Debug\physics.exe" /INCREMENTAL /NOLOGO /LIBPATH:D:\class\SoftwareEngineering\SomePhysEngin\reference\PhysicalEngine\p5out\msvc\lib SDL.lib SDLmain.lib libpng.lib OpenGL32.lib glu32.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\class\SoftwareEngineering\SomePhysEngin\reference\PhysicalEngine\p5out\msvc\Debug\physics.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\class\SoftwareEngineering\SomePhysEngin\reference\PhysicalEngine\p5out\msvc\Debug\physics.lib" /MACHINE:X86 /SAFESEH Debug\application.obj
+         Debug\imageio.obj
+         Debug\scene_loader.obj
+         Debug\camera_roam.obj
+         Debug\collisions.obj
+         Debug\physics.obj
+         Debug\spherebody.obj
+         Debug\planebody.obj
+         Debug\trianglebody.obj
+         Debug\spring.obj
+         Debug\main.obj
+         Debug\camera.obj
+         Debug\color.obj
+         Debug\math.obj
+         Debug\matrix.obj
+         Debug\quaternion.obj
+         Debug\vector.obj
+         Debug\tinyxml.obj
+         Debug\tinyxmlerror.obj
+         Debug\tinyxmlparser.obj
+         Debug\material.obj
+         Debug\geometry.obj
+         Debug\mesh.obj
+         Debug\model.obj
+         Debug\scene.obj
+         Debug\sphere.obj
+         Debug\triangle.obj
+         physics.vcxproj -> D:\class\SoftwareEngineering\SomePhysEngin\reference\PhysicalEngine\p5out\msvc\Debug\physics.exe
+     1>已完成生成项目“D:\class\SoftwareEngineering\SomePhysEngin\reference\PhysicalEngine\p5out\msvc\physics.vcxproj”(Build 个目标)的操作。
 
-Build succeeded.
+生成成功。
 
-Time Elapsed 00:00:00.06
+已用时间 00:00:01.52
