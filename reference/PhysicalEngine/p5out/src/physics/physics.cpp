@@ -60,7 +60,12 @@ void Physics::step( real_t dt )
 		}
 	}
 
-	// Evolision: RK4
+	// position evolusion: RK4
+	/*for (size_t n = 0; n < spheres.size(); n++)
+	{
+		update_force();
+		spheres[n]->step_position(dt, 0);
+	}*/
 	for (size_t n = 0; n < spheres.size(); n++)
 	{
 		v0s[n] = spheres[n]->velocity;
@@ -95,6 +100,13 @@ void Physics::step( real_t dt )
 		spheres[n]->get_step(rk4_dvt[n], rk4_dxt[n]); //k4
 		spheres[n]->velocity = v0s[n] + (rk4_dvdt[n] + 2 * rk4_dvm[n] + rk4_dvt[n]) * dt / 6;
 		spheres[n]->position = x0s[n] + (rk4_dxdt[n] + 2 * rk4_dxm[n] + rk4_dxt[n]) * dt / 6;
+	}
+
+	// rotation evolusion
+	for (size_t n = 0; n < spheres.size(); n++)
+	{
+		update_force();
+		spheres[n]->step_orientation(dt, 0);
 	}
 
 	//update sphere geom
