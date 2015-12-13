@@ -47,12 +47,14 @@ Vector3 SphereBody::step_orientation( real_t dt, real_t motion_damping )
     // vec.y = rotation along y axis
     // vec.z = rotation along z axis
 	// to the 1st order. RK4 is performed in class "physics"
+	angular_velocity += (torque + torque_static) / Rotational_Inertia() * dt
+		- motion_damping * angular_velocity * dt;
 	if (squared_length(angular_velocity) > MIN_OMEGA)
 	{
 		Vector3 delta = angular_velocity * dt;
 		// orientation += Quaternion(0, delta.x, delta.y, delta.z) * orientation;
 		orientation = Quaternion(delta, length(delta)) * orientation;
-		angular_velocity += (torque + torque_static) / angular_momentum();
+		//std::cout << "there's rotate" << angular_velocity << std::endl;
 		return delta;
 	}
 	return Vector3::Zero;

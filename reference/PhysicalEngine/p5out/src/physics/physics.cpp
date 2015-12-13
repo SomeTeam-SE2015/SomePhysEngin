@@ -103,6 +103,7 @@ void Physics::step( real_t dt )
 	}
 
 	// rotation evolusion
+	//static int check = 0;
 	for (size_t n = 0; n < spheres.size(); n++)
 	{
 		update_force();
