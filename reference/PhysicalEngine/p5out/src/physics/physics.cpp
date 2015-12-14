@@ -40,6 +40,7 @@ void Physics::step( real_t dt )
 				if (collides(**collider, **collidee, collision_damping)) {
 					//std::cout << "Sphere" << (*collidee)->id << ":" << (*collidee)->velocity << std::endl;
 					//std::cout << "Sphere" << (*collider)->id << ":" << (*collider)->velocity << std::endl;
+					//break;
 				}
 			}
 		}

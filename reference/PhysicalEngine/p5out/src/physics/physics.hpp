@@ -9,6 +9,7 @@
 #include "physics/trianglebody.hpp"
 #include "physics/planebody.hpp"
 #include "physics/spring.hpp"
+#include "lenthsquarespring.hpp"
 #include "physics/collisions.hpp"
 
 #include <vector>

@@ -86,6 +86,7 @@ static const char STR_VELOCITY[] = "velocity";
 static const char STR_ANGULARVELOCITY[] = "angular_velocity";
 static const char STR_GRAVITY[] = "gravity";
 static const char STR_SPRING[] = "spring";
+static const char STR_SQSPRING[] = "sqspring";
 static const char STR_CONSTANT[] = "constant";
 static const char STR_EQUILIBRIUM[] = "equilibrium";
 static const char STR_OFFSET1[] = "offset1";
@@ -579,15 +580,25 @@ bool load_scene( Scene* scene, const char* filename )
             elem = elem->NextSiblingElement( STR_PLANEBODY );
         }
 
-        // springs
-        elem = root->FirstChildElement( STR_SPRING );
-        while ( elem ) {
-            Spring* spring = new Spring();
-            check_mem( spring );
-            parse_spring( bodies, elem, spring );
-            scene->get_physics()->add_spring( spring );
-            elem = elem->NextSiblingElement( STR_SPRING );
-        }
+		// springs
+		elem = root->FirstChildElement(STR_SPRING);
+		while (elem) {
+			Spring* spring = new Spring();
+			check_mem(spring);
+			parse_spring(bodies, elem, spring);
+			scene->get_physics()->add_spring(spring);
+			elem = elem->NextSiblingElement(STR_SPRING);
+		}
+
+		// sqsprings
+		elem = root->FirstChildElement(STR_SQSPRING);
+		while (elem) {
+			Spring* spring = new LenthSqSpring();
+			check_mem(spring);
+			parse_spring(bodies, elem, spring);
+			scene->get_physics()->add_spring(spring);
+			elem = elem->NextSiblingElement(STR_SPRING);
+		}
 
     } catch ( std::bad_alloc const& ) {
         std::cout << "Out of memory error while loading scene\n.";

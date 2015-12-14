@@ -5,16 +5,18 @@ namespace _462 {
 bool collides( SphereBody& body1, SphereBody& body2, real_t collision_damping )
 {
     // TODO detect collision. If there is one, update velocity
-	if ((body1.radius + body2.radius) * (body1.radius + body2.radius)
-		>= squared_length(body1.position - body2.position) 
-		&& dot(body1.position - body2.position, body1.velocity - body2.velocity) < 0)
+	Vector3 relative_v = body1.velocity - body2.velocity;
+	Vector3 direction = body1.position - body2.position;
+	if ((body1.radius + body2.radius) * (body1.radius + body2.radius)>= squared_length(direction)
+		&& dot(direction, relative_v) < 0)
 	{
 		// collision happens
 		Vector3 totalMomentum = body1.velocity * body1.mass + body2.velocity * body2.mass;
-		Vector3 velocityDif = (body1.velocity - body2.velocity) * (1-collision_damping);
+		Vector3 velocityDif = relative_v - direction * (dot(relative_v, direction)
+			/ squared_length(direction) * (2-collision_damping));
 		real_t totalMass = body1.mass + body2.mass;
-		body1.velocity = (totalMomentum - velocityDif*body2.mass) / totalMass;
-		body2.velocity = (totalMomentum + velocityDif*body1.mass) / totalMass;
+		body1.velocity = (totalMomentum + velocityDif*body2.mass) / totalMass;
+		body2.velocity = (totalMomentum - velocityDif*body1.mass) / totalMass;
 		return true;
 	}
 

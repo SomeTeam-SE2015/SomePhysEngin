@@ -1,0 +1,59 @@
+
+<scene>
+    <camera>
+        <fov v=".785"/>
+        <near_clip v=".01"/>
+        <far_clip v="200.0"/>
+        <position x="0.0" y="3.75" z="14.0"/>
+        <orientation a="0.0" x="0.0" y="-1.0" z="0.0"/>
+    </camera>
+
+    <background_color r="0.4" g="0.4" b="0.4"/>
+
+    <refractive_index v="1.0"/>
+
+    <ambient_light r="0.2" g="0.2" b="0.2"/>
+
+    <gravity x="0.0" y="0.0" z="0.0"/>
+
+    <point_light>
+        <position x="1.0" y="3.0" z="12.0"/>
+        <color r="1.0" g="1.0" b="1.0"/>
+    </point_light>
+
+    <material name="mirror">
+        <ambient r="0.0" g="0.0" b="0.0"/>
+        <diffuse r="0.0" g="0.0" b="0.0"/>
+        <specular r="1.0" g="1.0" b="1.0"/>
+        <refractive_index v="0.0"/>
+    </material>
+        
+    <sphere material="mirror">
+        <position x="-2.0" y="5.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="1"/>
+            <mass v="1000.0"/>
+            <velocity x="0.0" y="0.0" z="0.0"/>
+        </body>
+    </sphere> 
+
+    <sphere material="mirror">
+        <position x="1.0" y="3.0" z="0.0"/>
+        <radius v="0.1"/>
+        <body>
+            <id i="2"/>
+            <mass v="1.0"/>
+            <velocity x="0.0" y="-5.0" z="0.0"/>
+        </body>
+    </sphere> 
+
+	<sqspring>
+		<constant v="10.0"/>
+		<equilibrium v="0"/>
+		<body1 i="1"/>
+		<body2 i="2"/>
+        <damping v="0"/>
+    </sqspring>
+</scene>
+
