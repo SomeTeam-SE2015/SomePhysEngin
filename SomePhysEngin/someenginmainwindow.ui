@@ -1,24 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>SomeEnginMainWindow</class>
- <widget class="QMainWindow" name="SomeEnginMainWindow" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="SomeEnginMainWindow">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1096</width>
+    <height>643</height>
    </rect>
   </property>
-  <property name="windowTitle" >
-   <string>SomeEnginMainWindow</string>
+  <property name="windowTitle">
+   <string>SomeEngin-demo</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>设置</string>
+        </property>
+        <zorder>openGLWidget</zorder>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QOpenGLWidget" name="openGLWidget">
+        <property name="minimumSize">
+         <size>
+          <width>800</width>
+          <height>600</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>800</width>
+          <height>600</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1096</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="document">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="load_scene"/>
+    <addaction name="save_scene"/>
+   </widget>
+   <widget class="QMenu" name="helps">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="help"/>
+    <addaction name="action"/>
+   </widget>
+   <addaction name="document"/>
+   <addaction name="helps"/>
+  </widget>
+  <action name="help">
+   <property name="text">
+    <string>帮助</string>
+   </property>
+  </action>
+  <action name="load_scene">
+   <property name="text">
+    <string>导入scene文件</string>
+   </property>
+  </action>
+  <action name="save_scene">
+   <property name="text">
+    <string>保存scene文件</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>about</string>
+   </property>
+  </action>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>
