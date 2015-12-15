@@ -102,6 +102,9 @@
     <ClCompile Include="..\src\scene\triangle.cpp">
       <Filter>src\scene</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\physics\lenthsquarespring.cpp">
+      <Filter>src\physics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\application\application.hpp">
@@ -181,6 +184,9 @@
     </ClInclude>
     <ClInclude Include="..\src\scene\triangle.hpp">
       <Filter>src\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\physics\lenthsquarespring.hpp">
+      <Filter>src\physics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

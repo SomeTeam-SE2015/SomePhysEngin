@@ -96,6 +96,7 @@
     <ClCompile Include="..\src\application\scene_loader.cpp" />
     <ClCompile Include="..\src\application\camera_roam.cpp" />
     <ClCompile Include="..\src\physics\collisions.cpp" />
+    <ClCompile Include="..\src\physics\lenthsquarespring.cpp" />
     <ClCompile Include="..\src\physics\physics.cpp" />
     <ClCompile Include="..\src\physics\spherebody.cpp" />
     <ClCompile Include="..\src\physics\planebody.cpp" />
@@ -126,6 +127,7 @@
     <ClInclude Include="..\src\application\scene_loader.hpp" />
     <ClInclude Include="..\src\application\camera_roam.hpp" />
     <ClInclude Include="..\src\physics\collisions.hpp" />
+    <ClInclude Include="..\src\physics\lenthsquarespring.hpp" />
     <ClInclude Include="..\src\physics\physics.hpp" />
     <ClInclude Include="..\src\physics\body.hpp" />
     <ClInclude Include="..\src\physics\spherebody.hpp" />
