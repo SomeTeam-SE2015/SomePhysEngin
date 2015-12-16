@@ -21,6 +21,8 @@ class Scene;
  * Will clear the scene on error.
  */
 bool load_scene( Scene* scene, FILE* file );
+
+//This function is added by LM
 bool parse_scene(Scene* scene, std::string scene_content);
 
 } /* _SomeEngin */
