@@ -15,7 +15,7 @@
 - OpenGL
 - tinyXML
 - pnglib
-- CMU 课程 CSD 15-462 [Project 5](http://www.cs.cmu.edu/afs/cs/academic/class/15462-f12/www/project/p5.tar.gz)
+- CMU 课程 [CSD 15-462](http://www.cs.cmu.edu/afs/cs/academic/class/15462-f12/www/) [Project 5](http://www.cs.cmu.edu/afs/cs/academic/class/15462-f12/www/project/p5.tar.gz)
 
 其中 (for Win) 使用动态链接库 `glew32.dll`, `libpng12-0.dll`, `glew32.dll` 
 和静态链接库 `glew32`, `libpng`. 这些二进制文件都有多平台版本. 多平台支持待添加.
