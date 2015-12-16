@@ -22,7 +22,6 @@
         <property name="title">
          <string>设置</string>
         </property>
-        <zorder>enginViewer</zorder>
        </widget>
       </item>
       <item>
@@ -33,7 +32,16 @@
        </widget>
       </item>
       <item>
-       <widget class="EnginViewer" name="enginViewer">
+       <widget class="SceneGeneratorTest" name="enginViewer">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
           <width>800</width>
@@ -45,6 +53,9 @@
           <width>800</width>
           <height>600</height>
          </size>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -102,9 +113,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>EnginViewer</class>
-   <extends>QOpenGLWidget</extends>
-   <header location="global">enginviewer.h</header>
+   <class>SceneGeneratorTest</class>
+   <extends>QPlainTextEdit</extends>
+   <header location="global">scenegeneratortest.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

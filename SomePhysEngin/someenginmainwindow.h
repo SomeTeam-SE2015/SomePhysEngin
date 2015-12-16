@@ -4,10 +4,12 @@
 #include <QMainWindow>
 #include <QTimer>
 #include "enginviewer.h"
+#include "scenegeneratortest.h"
 
 namespace Ui {
 class SomeEnginMainWindow;
 class EnginViewer;
+class SceneGeneratorTest;
 }
 
 class SomeEnginMainWindow : public QMainWindow

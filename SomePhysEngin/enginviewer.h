@@ -10,13 +10,13 @@
 #ifndef ENGINVIEWER_H
 #define ENGINVIEWER_H
 
-#include "scene/scene.hpp"
+//#include "scene/scene.hpp"
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
 #include <QOpenGLBuffer>
 #include <string>
 
-using namespace _SomeEngin;
+//using namespace _SomeEngin;
 
 class EnginViewer : public QOpenGLWidget, protected QOpenGLFunctions
 {
@@ -29,7 +29,7 @@ public:
     void reset_scene(const std::string& scene_content);
 
 protected:
-    Scene scene;
+    //Scene scene;
     double fps;
     int height, width;
     double speed;
