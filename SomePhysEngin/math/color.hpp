@@ -5,14 +5,14 @@
  * @author Eric Butler (edbutler)
  */
 
-#ifndef _462_MATH_COLOR_HPP_
-#define _462_MATH_COLOR_HPP_
+#ifndef _SomeEngin_MATH_COLOR_HPP_
+#define _SomeEngin_MATH_COLOR_HPP_
 
 #include "math/math.hpp"
 #include <iostream>
 #include <cassert>
 
-namespace _462 {
+namespace _SomeEngin {
 
 /**
  * An RGB color.
@@ -136,7 +136,7 @@ Color3 clamp( const Color3& c, real_t min, real_t max );
  */
 std::ostream& operator<<( std::ostream& os, const Color3& rhs );
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_MATH_COLOR_HPP_ */
+#endif /* _SomeEngin_MATH_COLOR_HPP_ */
 

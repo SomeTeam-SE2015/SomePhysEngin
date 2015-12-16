@@ -16,7 +16,7 @@
 #include <sstream>
 
 
-namespace _462 {
+namespace _SomeEngin {
 
 Model::Model() : mesh( 0 ), material( 0 ) { }
 Model::~Model() { }
@@ -33,5 +33,5 @@ void Model::render() const
 }
 
 
-} /* _462 */
+} /* _SomeEngin */
 

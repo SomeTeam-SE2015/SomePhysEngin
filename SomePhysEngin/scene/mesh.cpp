@@ -15,7 +15,7 @@
 #include <sstream>
 #include <map>
 
-namespace _462 {
+namespace _SomeEngin {
 
 struct TriIndex
 {
@@ -399,4 +399,4 @@ void Mesh::render() const
     glDrawElements( GL_TRIANGLES, index_data.size(), GL_UNSIGNED_INT, &index_data[0] );
 }
 
-} /* _462 */
+} /* _SomeEngin */

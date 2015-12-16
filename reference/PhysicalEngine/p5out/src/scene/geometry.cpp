@@ -1,6 +1,6 @@
 #include "scene/geometry.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 Geometry::Geometry():
     position( Vector3::Zero ),

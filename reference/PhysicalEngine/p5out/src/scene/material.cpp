@@ -8,7 +8,7 @@
 #include "scene/material.hpp"
 #include "application/imageio.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 Material::Material():
     ambient( Color3::White ),

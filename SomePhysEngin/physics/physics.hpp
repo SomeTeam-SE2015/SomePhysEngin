@@ -1,5 +1,5 @@
-#ifndef _462_PHYSICS_PHYSICS_HPP_
-#define _462_PHYSICS_PHYSICS_HPP_
+#ifndef _SomeEngin_PHYSICS_PHYSICS_HPP_
+#define _SomeEngin_PHYSICS_PHYSICS_HPP_
 
 #include "math/math.hpp"
 #include "math/quaternion.hpp"
@@ -14,7 +14,7 @@
 
 #include <vector>
 
-namespace _462 {
+namespace _SomeEngin {
 
 class Physics
 {

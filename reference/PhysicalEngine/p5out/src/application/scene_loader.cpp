@@ -19,7 +19,7 @@
 #include <cstring>
 #include <exception>
 
-namespace _462 {
+namespace _SomeEngin {
 
 struct StrCompare
 {
@@ -613,5 +613,5 @@ bool load_scene( Scene* scene, const char* filename )
 
 }
 
-} /* _462 */
+} /* _SomeEngin */
 

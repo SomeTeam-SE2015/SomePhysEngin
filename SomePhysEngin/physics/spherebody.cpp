@@ -6,7 +6,7 @@
 #include <exception>
 #include <algorithm>
 
-namespace _462 {
+namespace _SomeEngin {
 SphereBody::SphereBody( Sphere* geom )
 {
     sphere = geom;

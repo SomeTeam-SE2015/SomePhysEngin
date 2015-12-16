@@ -22,7 +22,7 @@
         <property name="title">
          <string>设置</string>
         </property>
-        <zorder>openGLWidget</zorder>
+        <zorder>enginViewer</zorder>
        </widget>
       </item>
       <item>
@@ -33,7 +33,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QOpenGLWidget" name="openGLWidget">
+       <widget class="EnginViewer" name="enginViewer">
         <property name="minimumSize">
          <size>
           <width>800</width>
@@ -100,6 +100,13 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>EnginViewer</class>
+   <extends>QOpenGLWidget</extends>
+   <header location="global">enginviewer.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

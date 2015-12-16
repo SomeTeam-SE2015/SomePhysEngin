@@ -1,9 +1,9 @@
-#ifndef _462_SPRING_HPP_
-#define _462_SPRING_HPP_
+#ifndef _SomeEngin_SPRING_HPP_
+#define _SomeEngin_SPRING_HPP_
 
 #include "physics/body.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 class Spring
 {

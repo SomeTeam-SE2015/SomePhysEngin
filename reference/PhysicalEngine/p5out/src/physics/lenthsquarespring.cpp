@@ -7,7 +7,7 @@
 #include "physics/spherebody.hpp"
 #include <iostream>
 
-namespace _462 {
+namespace _SomeEngin {
 
 LenthSqSpring::LenthSqSpring() : Spring()
 {

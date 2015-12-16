@@ -7,7 +7,7 @@
 
 #include "math/color.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 const Color3 Color3::Black = Color3( 0.0, 0.0, 0.0 );
 const Color3 Color3::White = Color3( 1.0, 1.0, 1.0 );
@@ -56,5 +56,5 @@ std::ostream& operator<<( std::ostream& os, const Color3& c )
     return os << '(' << c.r << ',' << c.g << ',' << c.b << ')';
 }
 
-} /* _462 */
+} /* _SomeEngin */
 

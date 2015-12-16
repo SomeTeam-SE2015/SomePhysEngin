@@ -6,13 +6,13 @@
  * @author Zeyang Li (zeyangl)
  */
 
-#ifndef _462_MATH_QUATERNION_HPP_
-#define _462_MATH_QUATERNION_HPP_
+#ifndef _SomeEngin_MATH_QUATERNION_HPP_
+#define _SomeEngin_MATH_QUATERNION_HPP_
 
 #include "math/math.hpp"
 #include "math/vector.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 class Matrix3;
 class Matrix4;
@@ -144,7 +144,7 @@ Quaternion conjugate( const Quaternion& q );
 
 std::ostream& operator <<( std::ostream& o, const Quaternion& q );
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_MATH_QUATERNION_HPP_ */
+#endif /* _SomeEngin_MATH_QUATERNION_HPP_ */
 

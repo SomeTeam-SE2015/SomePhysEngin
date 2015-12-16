@@ -11,7 +11,7 @@
 
 #include <cstring>
 
-namespace _462 {
+namespace _SomeEngin {
 
 const Matrix3 Matrix3::Identity = Matrix3( 1, 0, 0,
                                            0, 1, 0,
@@ -404,5 +404,5 @@ std::ostream& operator<<( std::ostream& os, const Matrix3& mat )
 	return os;
 }
 
-} /* _462 */
+} /* _SomeEngin */
 

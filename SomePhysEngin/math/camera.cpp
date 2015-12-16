@@ -7,7 +7,7 @@
 
 #include "math/camera.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 Camera::Camera()
     : position( Vector3::Zero ),
@@ -84,4 +84,4 @@ void Camera::rotate( const Vector3& axis, real_t radians )
     orientation = normalize( Quaternion( axis, radians ) * orientation );
 }
 
-} /* _462 */
+} /* _SomeEngin */

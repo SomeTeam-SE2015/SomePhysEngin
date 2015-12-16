@@ -5,15 +5,15 @@
  * @author Eric Butler (edbutler)
  */
 
-#ifndef _462_SCENE_MATERIAL_HPP_
-#define _462_SCENE_MATERIAL_HPP_
+#ifndef _SomeEngin_SCENE_MATERIAL_HPP_
+#define _SomeEngin_SCENE_MATERIAL_HPP_
 
 #include "math/color.hpp"
 #include "math/vector.hpp"
 #include "application/opengl.hpp"
 #include <string>
 
-namespace _462 {
+namespace _SomeEngin {
 
 class Material
 {
@@ -88,7 +88,7 @@ private:
     Material& operator=( const Material& );
 };
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_SCENE_MATERIAL_HPP_ */
+#endif /* _SomeEngin_SCENE_MATERIAL_HPP_ */
 

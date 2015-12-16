@@ -1,12 +1,12 @@
-#ifndef _462_PHYSICS_TRIANGLE_HPP_
-#define _462_PHYSICS_TRIANGLE_HPP_
+#ifndef _SomeEngin_PHYSICS_TRIANGLE_HPP_
+#define _SomeEngin_PHYSICS_TRIANGLE_HPP_
 
 #include "scene/triangle.hpp"
 #include "physics/body.hpp"
 #include "physics/spherebody.hpp"
 #include "math/vector.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 class Triangle;
 

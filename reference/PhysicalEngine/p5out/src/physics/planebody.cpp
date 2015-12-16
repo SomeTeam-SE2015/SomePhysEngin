@@ -1,7 +1,7 @@
 #include "physics/planebody.hpp"
 #include <iostream>
 
-namespace _462 {
+namespace _SomeEngin {
 
 PlaneBody::PlaneBody() 
 {

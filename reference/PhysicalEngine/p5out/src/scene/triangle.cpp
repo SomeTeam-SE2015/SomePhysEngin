@@ -8,7 +8,7 @@
 #include "scene/triangle.hpp"
 #include "application/opengl.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 Triangle::Triangle()
 {
@@ -50,5 +50,5 @@ void Triangle::render() const
 }
 
 
-} /* _462 */
+} /* _SomeEngin */
 

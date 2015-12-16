@@ -11,7 +11,7 @@
 #include "math/matrix.hpp"
 #include <iostream>
 
-namespace _462 {
+namespace _SomeEngin {
 
 const Quaternion Quaternion::Zero( 0.0, 0.0, 0.0, 0.0 );
 
@@ -226,5 +226,5 @@ std::ostream& operator <<( std::ostream& o, const Quaternion& q )
     return o;
 }
 
-} /* _462 */
+} /* _SomeEngin */
 

@@ -8,7 +8,7 @@
 
 #include "scene/scene.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 PointLight::PointLight():
     position( Vector3::Zero ),
@@ -129,5 +129,5 @@ void Scene::update( real_t dt )
 }
 
 
-} /* _462 */
+} /* _SomeEngin */
 

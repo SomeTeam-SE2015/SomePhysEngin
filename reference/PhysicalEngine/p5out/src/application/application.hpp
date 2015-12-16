@@ -5,13 +5,13 @@
  * @author Eric Butler (edbutler)
  */
 
-#ifndef _462_APPLICATION_APPLICATION_HPP_
-#define _462_APPLICATION_APPLICATION_HPP_
+#ifndef _SomeEngin_APPLICATION_APPLICATION_HPP_
+#define _SomeEngin_APPLICATION_APPLICATION_HPP_
 
 #include "math/math.hpp"
 #include <SDL/SDL_events.h>
 
-namespace _462 {
+namespace _SomeEngin {
 
 /**
  * A windowed application.
@@ -84,7 +84,7 @@ private:
     Application& operator=( const Application& );
 };
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_APPLICATION_APPLICATION_HPP_ */
+#endif /* _SomeEngin_APPLICATION_APPLICATION_HPP_ */
 

@@ -5,8 +5,8 @@
  * @author Eric Butler (edbutler)
  */
 
-#ifndef _462_MATH_VECTOR_HPP_
-#define _462_MATH_VECTOR_HPP_
+#ifndef _SomeEngin_MATH_VECTOR_HPP_
+#define _SomeEngin_MATH_VECTOR_HPP_
 
 #include "math/math.hpp"
 #include <algorithm>
@@ -14,7 +14,7 @@
 #include <cmath>
 #include <iostream>
 
-namespace _462 {
+namespace _SomeEngin {
 
 /*
 This file defines 3 different vector classes: 2D, 3D, and 4D.
@@ -733,7 +733,7 @@ inline Vector4 operator*( real_t s, const Vector4& rhs ) {
  */
 std::ostream& operator<<( std::ostream& os, const Vector4& rhs );
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_MATH_VECTOR_HPP_ */
+#endif /* _SomeEngin_MATH_VECTOR_HPP_ */
 

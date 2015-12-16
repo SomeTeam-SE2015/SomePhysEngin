@@ -5,13 +5,13 @@
  * @author Zeyang Li (zeyangl)
  */
 
-#ifndef _462_APPLICATION_CAMERAROAM_HPP_
-#define _462_APPLICATION_CAMERAROAM_HPP_
+#ifndef _SomeEngin_APPLICATION_CAMERAROAM_HPP_
+#define _SomeEngin_APPLICATION_CAMERAROAM_HPP_
 
 #include "application/application.hpp"
 #include "math/camera.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 class CameraRoamControl
 {
@@ -39,7 +39,7 @@ private:
     Rotation rotation;
 };
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_APPLICATION_CAMERAROAM_HPP_ */
+#endif /* _SomeEngin_APPLICATION_CAMERAROAM_HPP_ */
 

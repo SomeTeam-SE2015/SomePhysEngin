@@ -6,15 +6,15 @@
  * @author Zeyang Li (zeyangl)
  */
 
-#ifndef _462_SCENE_MESH_HPP_
-#define _462_SCENE_MESH_HPP_
+#ifndef _SomeEngin_SCENE_MESH_HPP_
+#define _SomeEngin_SCENE_MESH_HPP_
 
 #include "math/vector.hpp"
 
 #include <vector>
 #include <cassert>
 
-namespace _462 {
+namespace _SomeEngin {
 
 struct MeshVertex
 {
@@ -96,7 +96,7 @@ private:
 };
 
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_SCENE_MESH_HPP_ */
+#endif /* _SomeEngin_SCENE_MESH_HPP_ */
 

@@ -5,13 +5,13 @@
  * @author Eric Butler (edbutler)
  */
 
-#ifndef _462_SCENE_TRIANGLE_HPP_
-#define _462_SCENE_TRIANGLE_HPP_
+#ifndef _SomeEngin_SCENE_TRIANGLE_HPP_
+#define _SomeEngin_SCENE_TRIANGLE_HPP_
 
 #include "scene/material.hpp"
 #include "scene/geometry.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 /**
  * a triangle geometry.
@@ -44,7 +44,7 @@ public:
 };
 
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_SCENE_TRIANGLE_HPP_ */
+#endif /* _SomeEngin_SCENE_TRIANGLE_HPP_ */
 

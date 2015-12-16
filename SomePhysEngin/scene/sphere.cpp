@@ -9,7 +9,7 @@
 #include "scene/sphere.hpp"
 #include "application/opengl.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 #define SPHERE_NUM_LAT 80
 #define SPHERE_NUM_LON 100
@@ -97,5 +97,5 @@ void Sphere::render() const
 }
 
 
-} /* _462 */
+} /* _SomeEngin */
 

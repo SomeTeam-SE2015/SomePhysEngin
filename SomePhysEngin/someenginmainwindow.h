@@ -2,9 +2,12 @@
 #define SOMEENGINMAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
+#include "enginviewer.h"
 
 namespace Ui {
 class SomeEnginMainWindow;
+class EnginViewer;
 }
 
 class SomeEnginMainWindow : public QMainWindow
@@ -17,6 +20,7 @@ public:
 
 private:
     Ui::SomeEnginMainWindow *ui;
+    QTimer *m_timer;
 };
 
 #endif // SOMEENGINMAINWINDOW_H

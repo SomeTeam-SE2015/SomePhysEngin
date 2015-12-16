@@ -5,14 +5,14 @@
  * @author Eric Butler (edbutler)
  */
 
-#ifndef _462_SCENE_MODEL_HPP_
-#define _462_SCENE_MODEL_HPP_
+#ifndef _SomeEngin_SCENE_MODEL_HPP_
+#define _SomeEngin_SCENE_MODEL_HPP_
 
 #include "scene/material.hpp"
 #include "scene/geometry.hpp"
 #include "scene/mesh.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 /**
  * A mesh of triangles.
@@ -32,7 +32,7 @@ public:
 };
 
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_SCENE_MODEL_HPP_ */
+#endif /* _SomeEngin_SCENE_MODEL_HPP_ */
 

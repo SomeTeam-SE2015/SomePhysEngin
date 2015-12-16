@@ -1,11 +1,11 @@
-#ifndef _462_PHYSICS_PLANE_HPP_
-#define _462_PHYSICS_PLANE_HPP_
+#ifndef _SomeEngin_PHYSICS_PLANE_HPP_
+#define _SomeEngin_PHYSICS_PLANE_HPP_
 
 #include "physics/body.hpp"
 #include "math/vector.hpp"
 #include "math/quaternion.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 class PlaneBody : public Body
 {

@@ -1,12 +1,12 @@
-#ifndef _462_PHYSICS_BODY_HPP_
-#define _462_PHYSICS_BODY_HPP_
+#ifndef _SomeEngin_PHYSICS_BODY_HPP_
+#define _SomeEngin_PHYSICS_BODY_HPP_
 
 #include "math/vector.hpp"
 #include "math/quaternion.hpp"
 #include <exception>
 #include <iostream>
 
-namespace _462 {
+namespace _SomeEngin {
 
 class Body
 {

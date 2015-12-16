@@ -6,8 +6,8 @@
  * @author Kristin Siu (kasiu)
  */
 
-#ifndef _462_SCENE_SCENE_HPP_
-#define _462_SCENE_SCENE_HPP_
+#ifndef _SomeEngin_SCENE_SCENE_HPP_
+#define _SomeEngin_SCENE_SCENE_HPP_
 
 #include "math/vector.hpp"
 #include "math/quaternion.hpp"
@@ -22,7 +22,7 @@
 #include <map>
 #include <cfloat>
 
-namespace _462 {
+namespace _SomeEngin {
 
 struct PointLight
 {
@@ -118,7 +118,7 @@ private:
 
 };
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_SCENE_SCENE_HPP_ */
+#endif /* _SomeEngin_SCENE_SCENE_HPP_ */
 

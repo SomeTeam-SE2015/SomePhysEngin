@@ -5,10 +5,10 @@
  * @author Eric Butler (edbutler)
  */
 
-#ifndef _462_APPLICATOIN_SCENELOADER_HPP_
-#define _462_APPLICATOIN_SCENELOADER_HPP_
+#ifndef _SomeEngin_APPLICATOIN_SCENELOADER_HPP_
+#define _SomeEngin_APPLICATOIN_SCENELOADER_HPP_
 
-namespace _462 {
+namespace _SomeEngin {
 
 class Scene;
 
@@ -20,7 +20,7 @@ class Scene;
  */
 bool load_scene( Scene* scene, const char* filename );
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_APPLICATOIN_SCENELOADER_HPP_ */
+#endif /* _SomeEngin_APPLICATOIN_SCENELOADER_HPP_ */
 

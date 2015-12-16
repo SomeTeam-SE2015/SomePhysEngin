@@ -7,7 +7,7 @@
 
 #include "math/vector.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 const Vector2 Vector2::Zero = Vector2( 0, 0 );
 const Vector2 Vector2::Ones = Vector2( 1, 1 );
@@ -42,5 +42,5 @@ std::ostream& operator<<( std::ostream& os, const Vector4& v )
     return os << '(' << v.x << ',' << v.y << ',' << v.z << ',' << v.w << ')';
 }
 
-} /* _462 */
+} /* _SomeEngin */
 

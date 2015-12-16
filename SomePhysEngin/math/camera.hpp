@@ -5,13 +5,13 @@
  * @author Eric Butler (edbutler)
  */
 
-#ifndef _462_MATH_CAMERA_HPP_
-#define _462_MATH_CAMERA_HPP_
+#ifndef _SomeEngin_MATH_CAMERA_HPP_
+#define _SomeEngin_MATH_CAMERA_HPP_
 
 #include "math/vector.hpp"
 #include "math/quaternion.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 /**
  * Stores position data of the camera.
@@ -73,7 +73,7 @@ public:
     real_t far_clip;
 };
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_MATH_CAMERA_HPP_ */
+#endif /* _SomeEngin_MATH_CAMERA_HPP_ */
 

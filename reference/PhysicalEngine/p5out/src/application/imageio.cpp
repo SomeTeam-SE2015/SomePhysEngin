@@ -27,12 +27,12 @@
 #include "application/imageio.hpp"
 
 #include "application/opengl.hpp"
-#include "application/application.hpp"
+//#include "application/application.hpp"
 #include <iostream>
 #include <png.h>
 #include <cassert>
 
-namespace _462 {
+namespace _SomeEngin {
 
 // ***** generic internal functions ***** //
 
@@ -263,5 +263,5 @@ void imageio_gen_name( char* filename, size_t len )
         strcat( filename, SS_SUFFIX );
 }
 
-} /* _462 */
+} /* _SomeEngin */
 

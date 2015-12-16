@@ -6,13 +6,13 @@
  * @author Zeyang Li (zeyangl)
  */
 
-#ifndef _462_MATH_MATH_HPP_
-#define _462_MATH_MATH_HPP_
+#ifndef _SomeEngin_MATH_MATH_HPP_
+#define _SomeEngin_MATH_MATH_HPP_
 
 #include <algorithm>
 #include <cmath>
 
-namespace _462 {
+namespace _SomeEngin {
 
 // floating point precision set by this typedef
 typedef double real_t;
@@ -29,7 +29,7 @@ inline T clamp( T val, T min, T max )
 }
 
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_MATH_MATH_HPP_ */
+#endif /* _SomeEngin_MATH_MATH_HPP_ */
 

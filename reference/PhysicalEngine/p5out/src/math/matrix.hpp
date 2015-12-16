@@ -6,14 +6,14 @@
  * @author Zeyang Li (zeyangl)
  */
 
-#ifndef _462_MATH_MATRIX_HPP_
-#define _462_MATH_MATRIX_HPP_
+#ifndef _SomeEngin_MATH_MATRIX_HPP_
+#define _SomeEngin_MATH_MATRIX_HPP_
 
 #include "math/math.hpp"
 #include "math/vector.hpp"
 #include <cassert>
 
-namespace _462 {
+namespace _SomeEngin {
 
 /*
 This file defines 2 matrix classes: 3x3 and 4x4.
@@ -285,7 +285,7 @@ void make_normal_matrix( Matrix3* rv, const Matrix4& tmat );
 
 std::ostream& operator<<( std::ostream& os, const Matrix3& mat );
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_MATH_MATRIX_HPP_ */
+#endif /* _SomeEngin_MATH_MATRIX_HPP_ */
 

@@ -6,13 +6,13 @@
  * @author Eric Butler (edbutler)
  */
 
-#ifndef _462_SCENE_SPHERE_HPP_
-#define _462_SCENE_SPHERE_HPP_
+#ifndef _SomeEngin_SCENE_SPHERE_HPP_
+#define _SomeEngin_SCENE_SPHERE_HPP_
 
 #include "scene/material.hpp"
 #include "scene/geometry.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 /**
  * A sphere, centered on its position with a certain radius.
@@ -30,7 +30,7 @@ public:
 
 };
 
-} /* _462 */
+} /* _SomeEngin */
 
-#endif /* _462_SCENE_SPHERE_HPP_ */
+#endif /* _SomeEngin_SCENE_SPHERE_HPP_ */
 

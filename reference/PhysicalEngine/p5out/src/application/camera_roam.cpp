@@ -9,7 +9,7 @@
 
 #include "application/camera_roam.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 static const real_t DirectionTable[] = { 0.0, 1.0, -1.0 };
 static const real_t TranslationSpeed = 2.0;
@@ -39,8 +39,8 @@ void CameraRoamControl::set_dir( bool pressed, int index, Direction newdir )
 
 void CameraRoamControl::handle_event( const Application* app, const SDL_Event& event )
 {
-    int width, height;
-    app->get_dimension( &width, &height );
+    //int width, height;
+    //app->get_dimension( &width, &height );
     int newidx = -1;
     Direction newdir = DZERO;
 

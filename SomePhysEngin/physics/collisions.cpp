@@ -1,6 +1,6 @@
 #include "physics/collisions.hpp"
 #include <cmath>
-namespace _462 {
+namespace _SomeEngin {
 
 bool collides( SphereBody& body1, SphereBody& body2, real_t collision_damping )
 {

@@ -1,7 +1,7 @@
 #include "physics/trianglebody.hpp"
 #include <iostream>
 
-namespace _462 {
+namespace _SomeEngin {
 
 TriangleBody::TriangleBody( Triangle* geom )
 {

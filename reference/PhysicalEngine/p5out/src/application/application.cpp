@@ -13,7 +13,7 @@
 #include <cstdlib>
 #include <iostream>
 
-namespace _462 {
+namespace _SomeEngin {
 
 struct LoopData
 {
@@ -257,5 +257,5 @@ int Application::start_application( Application* app, int width, int height, rea
     return -1;
 }
 
-} /* _462 */
+} /* _SomeEngin */
 

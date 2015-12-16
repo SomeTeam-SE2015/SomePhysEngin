@@ -1,11 +1,11 @@
-#ifndef _462_SCENE_GEOMETRY_HPP_
-#define _462_SCENE_GEOMETRY_HPP_
+#ifndef _SomeEngin_SCENE_GEOMETRY_HPP_
+#define _SomeEngin_SCENE_GEOMETRY_HPP_
 
 #include "math/vector.hpp"
 #include "math/color.hpp"
 #include "math/quaternion.hpp"
 
-namespace _462 {
+namespace _SomeEngin {
 
 class Geometry
 {

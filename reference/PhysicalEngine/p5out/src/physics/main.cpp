@@ -17,7 +17,7 @@
 #include <iostream>
 #include <cstring>
 
-namespace _462 {
+namespace _SomeEngin {
 
 #define DEFAULT_WIDTH 800
 #define DEFAULT_HEIGHT 600
@@ -313,9 +313,9 @@ static void render_scene( const Scene& scene )
     glPopAttrib();
 }
 
-} /* _462 */
+} /* _SomeEngin */
 
-using namespace _462;
+using namespace _SomeEngin;
 
 /**
  * Prints program usage. XXX change
@@ -422,11 +422,11 @@ int main( int argc, char* argv[] )
 {
     Options opt;
 
-    Matrix3 mat;
-    Matrix4 trn;
-    make_transformation_matrix( &trn, Vector3::Zero, Quaternion::Identity, Vector3( 2, 2, 2 ) );
+    //Matrix3 mat;
+    //Matrix4 trn;
+    //make_transformation_matrix( &trn, Vector3::Zero, Quaternion::Identity, Vector3( 2, 2, 2 ) );
 
-    make_normal_matrix( &mat, trn );
+    //make_normal_matrix( &mat, trn );
 
     if ( !parse_args( &opt, argc, argv ) ) {
         return 1;
