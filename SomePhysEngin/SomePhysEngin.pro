@@ -105,7 +105,6 @@ HEADERS  += someenginmainwindow.h \
     application/camera_roam.hpp \
     application/application.hpp \
     application/imageio.hpp \
-    application/opengl.hpp \
     application/scene_loader.hpp \
     physics/body.hpp \
     physics/collisions.hpp \

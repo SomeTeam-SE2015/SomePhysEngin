@@ -14,6 +14,7 @@
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
 #include <QOpenGLBuffer>
+#include <string>
 
 using namespace _SomeEngin;
 
@@ -24,13 +25,14 @@ public:
     EnginViewer(QWidget *parent = 0);
     ~EnginViewer(){}
 
+    void reset_scene(FILE* file);
+    void reset_scene(const std::string& scene_content);
+
 protected:
     Scene scene;
     double fps;
     int height, width;
     double speed;
-    unsigned char* buffer;
-    int buf_width, buf_height;
     bool pause;
 
     void initializeGL();

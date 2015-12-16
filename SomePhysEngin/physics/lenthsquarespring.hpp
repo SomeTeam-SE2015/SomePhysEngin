@@ -9,7 +9,7 @@ class LenthSqSpring: public Spring
 {
 public:
 	LenthSqSpring();
-	virtual ~LenthSqSpring() {};
+    virtual ~LenthSqSpring() {}
 	virtual void apply();
 };
 

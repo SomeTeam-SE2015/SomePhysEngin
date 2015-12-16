@@ -7,7 +7,7 @@ SomeEnginMainWindow::SomeEnginMainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     m_timer = new QTimer(this);
-    m_timer->setInterval(10);
+    m_timer->setInterval(1);
     connect(m_timer, SIGNAL(timeout()), ui->enginViewer, SLOT(update()));
     m_timer->start();
 }

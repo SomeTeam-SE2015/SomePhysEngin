@@ -426,33 +426,19 @@ static void parse_spring( BodyMap& bmap, const TiXmlElement* elem, Spring* sprin
     parse_elem( elem, false, STR_DAMPING, &spring->damping );
 }
 
-bool load_scene( Scene* scene, FILE* file )
+// This function is take apart by LM
+bool TiXmlparser(Scene* scene, const TiXmlElement* root)
 {
-    TiXmlDocument doc;
-    const TiXmlElement* root = 0;
+    if ( !root ) {
+        std::cout << "No root element.\n";
+        return false;
+    }
+
     const TiXmlElement* elem = 0;
     MaterialMap materials;
     MeshMap meshes;
     TriVertMap triverts;
     BodyMap bodies;
-
-    assert( scene );
-
-    // load the document
-
-    if ( !doc.LoadFile(file) ) {
-        std::cerr << "ERROR, " << doc.ErrorRow() << ":" << doc.ErrorCol() << "; "
-            << "parse error: " << doc.ErrorDesc() << "\n";
-        return false;
-    }
-
-    // check for root element
-
-    root = doc.RootElement();
-    if ( !root ) {
-        std::cout << "No root element.\n";
-        return false;
-    }
 
     // reset the scene
 
@@ -470,8 +456,8 @@ bool load_scene( Scene* scene, FILE* file )
         parse_elem( root, false, STR_AMLIGHT, &scene->ambient_light );
         // parse gravitational constant
         parse_elem( root, false, STR_GRAVITY, &scene->get_physics()->gravity );
-		// parse damping constants
-		parse_elem( root, false, STR_COLLISIONDAMPING, &scene->get_physics()->collision_damping );
+        // parse damping constants
+        parse_elem( root, false, STR_COLLISIONDAMPING, &scene->get_physics()->collision_damping );
 
         // parse the lights
         elem = root->FirstChildElement( STR_PLIGHT );
@@ -579,25 +565,25 @@ bool load_scene( Scene* scene, FILE* file )
             elem = elem->NextSiblingElement( STR_PLANEBODY );
         }
 
-		// springs
-		elem = root->FirstChildElement(STR_SPRING);
-		while (elem) {
-			Spring* spring = new Spring();
-			check_mem(spring);
-			parse_spring(bodies, elem, spring);
-			scene->get_physics()->add_spring(spring);
-			elem = elem->NextSiblingElement(STR_SPRING);
-		}
+        // springs
+        elem = root->FirstChildElement(STR_SPRING);
+        while (elem) {
+            Spring* spring = new Spring();
+            check_mem(spring);
+            parse_spring(bodies, elem, spring);
+            scene->get_physics()->add_spring(spring);
+            elem = elem->NextSiblingElement(STR_SPRING);
+        }
 
-		// sqsprings
-		elem = root->FirstChildElement(STR_SQSPRING);
-		while (elem) {
-			Spring* spring = new LenthSqSpring();
-			check_mem(spring);
-			parse_spring(bodies, elem, spring);
-			scene->get_physics()->add_spring(spring);
-			elem = elem->NextSiblingElement(STR_SPRING);
-		}
+        // sqsprings
+        elem = root->FirstChildElement(STR_SQSPRING);
+        while (elem) {
+            Spring* spring = new LenthSqSpring();
+            check_mem(spring);
+            parse_spring(bodies, elem, spring);
+            scene->get_physics()->add_spring(spring);
+            elem = elem->NextSiblingElement(STR_SPRING);
+        }
 
     } catch ( std::bad_alloc const& ) {
         std::cout << "Out of memory error while loading scene\n.";
@@ -609,7 +595,37 @@ bool load_scene( Scene* scene, FILE* file )
     }
 
     return true;
+}
 
+bool load_scene( Scene* scene, FILE* file )
+{
+    TiXmlDocument doc;
+    const TiXmlElement* root = 0;
+
+    assert( scene );
+
+    // load the document
+
+    if ( !doc.LoadFile(file) ) {
+        std::cerr << "ERROR, " << doc.ErrorRow() << ":" << doc.ErrorCol() << "; "
+            << "parse error: " << doc.ErrorDesc() << "\n";
+        return false;
+    }
+
+    // check for root element
+
+    root = doc.RootElement();
+
+    return TiXmlparser(scene, root);
+}
+
+// This function is written by LM
+bool parse_scene(Scene* scene, std::string scene_content)
+{
+    TiXmlDocument doc;
+    doc.Parse(scene_content.c_str());
+    const TiXmlElement* root = doc.RootElement();
+    return TiXmlparser(scene, root);
 }
 
 } /* _SomeEngin */

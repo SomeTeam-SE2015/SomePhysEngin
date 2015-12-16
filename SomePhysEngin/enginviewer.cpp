@@ -17,10 +17,9 @@
 #include <QMessageBox>
 #include <iostream>
 
-#define WIDTH 800
-#define HEIGHT 600
-#define FPS 30.0
-#define BUFFER_SIZE(w,h) ( (size_t) ( 4 * (w) * (h) ) )
+#define DEFAULT_WIDTH 800
+#define DEFAULT_HEIGHT 600
+#define DEFAULT_FPS 30.0
 static const GLenum LightConstants[] = {
     GL_LIGHT0, GL_LIGHT1, GL_LIGHT2, GL_LIGHT3,
     GL_LIGHT4, GL_LIGHT5, GL_LIGHT6, GL_LIGHT7
@@ -29,7 +28,7 @@ static const size_t NUM_GL_LIGHTS = 8;
 void render_scene( const Scene& scene );
 
 EnginViewer::EnginViewer(QWidget *parent) : QOpenGLWidget(parent),
-    width(WIDTH), height(HEIGHT), fps(FPS)
+    width(DEFAULT_WIDTH), height(DEFAULT_HEIGHT)
 {
 
 }
@@ -37,13 +36,47 @@ EnginViewer::EnginViewer(QWidget *parent) : QOpenGLWidget(parent),
 void EnginViewer::initializeGL()
 {
     initializeOpenGLFunctions();
-    FILE* file = fopen( "D:\\collision.scene", "rb" );
+    FILE* file = fopen( "scenes/stars.scene", "rb" );
     if ( !load_scene( &scene, file ) ) {
         QMessageBox::warning(this, "engin-demo","Error loading scene",
                              QMessageBox::Ok);
         return;
     }
-    fps = FPS;
+    fps = DEFAULT_FPS;
+
+    if ( !initApp() ) {
+        QMessageBox::warning(this, "engin-demo","Failed to start applcation, aborting.",
+                             QMessageBox::Ok);
+        return;
+    }
+}
+
+void EnginViewer::reset_scene(FILE *file)
+{
+    // scene.reset(); scene is reset while loading file
+    if ( !load_scene( &scene, file ) ) {
+        QMessageBox::warning(this, "engin-demo","Error loading scene",
+                             QMessageBox::Ok);
+        return;
+    }
+    fps = DEFAULT_FPS;
+
+    if ( !initApp() ) {
+        QMessageBox::warning(this, "engin-demo","Failed to start applcation, aborting.",
+                             QMessageBox::Ok);
+        return;
+    }
+}
+
+void EnginViewer::reset_scene(const std::string& scene_content)
+{
+    // scene.reset(); scene is reset while loading file
+    if ( !parse_scene( &scene, scene_content ) ) {
+        QMessageBox::warning(this, "engin-demo","Error loading scene",
+                             QMessageBox::Ok);
+        return;
+    }
+    fps = DEFAULT_FPS;
 
     if ( !initApp() ) {
         QMessageBox::warning(this, "engin-demo","Failed to start applcation, aborting.",

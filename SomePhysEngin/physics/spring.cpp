@@ -24,7 +24,7 @@ void Spring::apply()
 		+ damping*dot(body2->velocity - body1->velocity, direction)/squared_length(direction));
 
 	body1->apply_force(force, body1_offset);
-	body2->apply_force(-force, body2_offset);
+    body2->apply_force(-force, body2_offset);
 
 }
 
