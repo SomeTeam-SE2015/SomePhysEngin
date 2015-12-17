@@ -12,8 +12,7 @@ SomeEnginMainWindow::SomeEnginMainWindow(QWidget *parent) :
     m_timer->setInterval(1);
     connect(m_timer, SIGNAL(timeout()), ui->enginViewer, SLOT(update()));
     m_timer->start();
-    for (int i = 0; i < 7; i++)
-        MaterialChoice[i] = 0;
+    connect(this, SIGNAL(sendMaterialList(QStringList)), &vertexParaEdit, SLOT(showMaterialList(QStringList)));
 }
 
 SomeEnginMainWindow::~SomeEnginMainWindow()
@@ -48,4 +47,38 @@ void SomeEnginMainWindow::on_pushButton_2_clicked()
         for (int i = 0; i < 7; i++)
             MaterialChoice[i] = MC[i];
     }
+}
+
+void SomeEnginMainWindow::on_pushButton_3_clicked()
+{
+    QStringList materialList = getMaterialList();
+    emit sendMaterialList(materialList);
+    if (vertexParaEdit.exec() == QDialog::Accepted)
+    {
+        vertexParaEdit.setVertexPara();
+        double *para = vertexParaEdit.getVertexPara();
+        Vertex v;
+        v.setVertexPara(para);
+        vertexList.append(v);
+    }
+}
+
+QStringList SomeEnginMainWindow::getMaterialList()
+{
+    QStringList materialList;
+    if (MaterialChoice[0])
+        materialList<<"red";
+    if (MaterialChoice[1])
+        materialList<<"sred";
+    if (MaterialChoice[2])
+        materialList<<"green";
+    if (MaterialChoice[3])
+        materialList<<"sgreen";
+    if (MaterialChoice[4])
+        materialList<<"blue";
+    if (MaterialChoice[5])
+        materialList<<"sblue";
+    if (MaterialChoice[6])
+        materialList<<"mirror";
+    return materialList;
 }

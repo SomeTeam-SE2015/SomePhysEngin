@@ -60,5 +60,20 @@ enum MaterialType {red, sred, green ,sgreen, blue, sblue, mirror};
 //typedef Material MaterialSBlue(Color(0,0,1), Color(0,0,1), Color(0,1,1), 0, QString("sblue"));
 //typedef Material MaterialMirror(Color(0,0,0), Color(0,0,0), Color(1,1,1), 0, QString("mirror"));
 
+struct TexCoord
+{
+    double u;
+    double v;
+};
+
+struct Vertex
+{
+    MaterialType material;
+    Position position;
+    Position normal;
+    TexCoord texCoord;
+    void setVertexPara(double* para);
+};
+
 #endif // BASICOBJECTS
 
