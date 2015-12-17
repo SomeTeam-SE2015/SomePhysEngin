@@ -35,6 +35,8 @@ private:
     Ui::SomeEnginMainWindow *ui;
     QTimer *m_timer;
     EssentialPara essentialPara;
+    EssentialParaEdit essentialParaEdit;
+    MaterialParaEdit materialParaEdit;
     bool MaterialChoice[7];
 };
 

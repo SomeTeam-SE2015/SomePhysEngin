@@ -29,12 +29,11 @@ void SomeEnginMainWindow::on_load_scene_triggered()
 
 void SomeEnginMainWindow::on_pushButton_clicked()
 {
-    EssentialParaEdit dialog;
     double parameters[27]{0};
-    if (dialog.exec() == QDialog::Accepted)
+    if (essentialParaEdit.exec() == QDialog::Accepted)
     {
-        dialog.setEssentialPara();
-        double *para = dialog.getEssentialPara();
+        essentialParaEdit.setEssentialPara();
+        double *para = essentialParaEdit.getEssentialPara();
         for (int i = 0; i < 27; i++)
             parameters[i] = para[i];
     }
@@ -43,10 +42,9 @@ void SomeEnginMainWindow::on_pushButton_clicked()
 
 void SomeEnginMainWindow::on_pushButton_2_clicked()
 {
-    MaterialParaEdit dialog;
-    if (dialog.exec() == QDialog::Accepted)
+    if (materialParaEdit.exec() == QDialog::Accepted)
     {
-        bool *MC = dialog.getMaterialPara();
+        bool *MC = materialParaEdit.getMaterialPara();
         for (int i = 0; i < 7; i++)
             MaterialChoice[i] = MC[i];
     }
