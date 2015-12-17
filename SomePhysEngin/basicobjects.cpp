@@ -8,7 +8,7 @@ Material::Material(Color a, Color d, Color s, double r, QString str):
 
 }
 
-void Vertex::setVertexPara(double *para)
+void Vertex::setVertexPara(double *para, QString m)
 {
     position.x = para[0];
     position.y = para[1];
@@ -18,4 +18,5 @@ void Vertex::setVertexPara(double *para)
     normal.z = para[5];
     texCoord.u = para[6];
     texCoord.v = para[7];
+    material = m;
 }

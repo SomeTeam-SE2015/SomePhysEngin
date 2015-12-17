@@ -68,11 +68,11 @@ struct TexCoord
 
 struct Vertex
 {
-    MaterialType material;
+    QString material;
     Position position;
     Position normal;
     TexCoord texCoord;
-    void setVertexPara(double* para);
+    void setVertexPara(double* para, QString m);
 };
 
 #endif // BASICOBJECTS

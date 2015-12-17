@@ -58,7 +58,8 @@ void SomeEnginMainWindow::on_pushButton_3_clicked()
         vertexParaEdit.setVertexPara();
         double *para = vertexParaEdit.getVertexPara();
         Vertex v;
-        v.setVertexPara(para);
+        QString material = materialList[para[8]];
+        v.setVertexPara(para, material);
         vertexList.append(v);
     }
 }

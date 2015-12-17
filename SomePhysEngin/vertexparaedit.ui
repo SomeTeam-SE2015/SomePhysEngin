@@ -206,7 +206,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="xLabel_8">
         <property name="text">
-         <string>v</string>
+         <string>x</string>
         </property>
        </widget>
       </item>

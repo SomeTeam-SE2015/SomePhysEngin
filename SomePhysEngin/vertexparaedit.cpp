@@ -23,6 +23,7 @@ void VertexParaEdit::setVertexPara()
     para[5] = ui->xDoubleSpinBox_6->value();
     para[6] = ui->xDoubleSpinBox_7->value();
     para[7] = ui->xDoubleSpinBox_8->value();
+    para[8] = ui->comboBox->currentIndex();
 }
 
 double *VertexParaEdit::getVertexPara()
