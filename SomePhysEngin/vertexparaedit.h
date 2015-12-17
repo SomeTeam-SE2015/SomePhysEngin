@@ -22,7 +22,7 @@ public slots:
 
 private:
     Ui::VertexParaEdit *ui;
-    double para[8];
+    double para[9];
 };
 
 #endif // VERTEXPARAEDIT_H

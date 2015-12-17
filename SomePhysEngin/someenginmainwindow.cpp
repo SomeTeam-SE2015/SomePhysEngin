@@ -13,11 +13,33 @@ SomeEnginMainWindow::SomeEnginMainWindow(QWidget *parent) :
     connect(m_timer, SIGNAL(timeout()), ui->enginViewer, SLOT(update()));
     m_timer->start();
     connect(this, SIGNAL(sendMaterialList(QStringList)), &vertexParaEdit, SLOT(showMaterialList(QStringList)));
+    connect(this, SIGNAL(sendMaterialList(QStringList)), &sphereParaEdit, SLOT(showMaterialList(QStringList)));
 }
 
 SomeEnginMainWindow::~SomeEnginMainWindow()
 {
     delete ui;
+}
+
+
+QStringList SomeEnginMainWindow::getMaterialList()
+{
+    QStringList materialList;
+    if (MaterialChoice[0])
+        materialList<<"red";
+    if (MaterialChoice[1])
+        materialList<<"sred";
+    if (MaterialChoice[2])
+        materialList<<"green";
+    if (MaterialChoice[3])
+        materialList<<"sgreen";
+    if (MaterialChoice[4])
+        materialList<<"blue";
+    if (MaterialChoice[5])
+        materialList<<"sblue";
+    if (MaterialChoice[6])
+        materialList<<"mirror";
+    return materialList;
 }
 
 void SomeEnginMainWindow::on_load_scene_triggered()
@@ -59,29 +81,25 @@ void SomeEnginMainWindow::on_pushButton_3_clicked()
         double *para = vertexParaEdit.getVertexPara();
         Vertex v;
         QString material = materialList[para[8]];
-        QString name = tr("p");
-        name.append(char(vertexList.size()+1));
-        v.setVertexPara(para, material, name);
+        QString name = tr("p")+QString("%1").arg(vertexList.size()+1);
+        v.setVertexPara(para, name, material);
         vertexList.append(v);
     }
 }
 
-QStringList SomeEnginMainWindow::getMaterialList()
+
+void SomeEnginMainWindow::on_pushButton_4_clicked()
 {
-    QStringList materialList;
-    if (MaterialChoice[0])
-        materialList<<"red";
-    if (MaterialChoice[1])
-        materialList<<"sred";
-    if (MaterialChoice[2])
-        materialList<<"green";
-    if (MaterialChoice[3])
-        materialList<<"sgreen";
-    if (MaterialChoice[4])
-        materialList<<"blue";
-    if (MaterialChoice[5])
-        materialList<<"sblue";
-    if (MaterialChoice[6])
-        materialList<<"mirror";
-    return materialList;
+    QStringList materialList = getMaterialList();
+    emit sendMaterialList(materialList);
+    if (sphereParaEdit.exec() == QDialog::Accepted)
+    {
+        sphereParaEdit.setSpherePara();
+        double *para = sphereParaEdit.getSpherePara();
+        Sphere s;
+        QString material = materialList[para[8]];
+        int id = sphereList.size()+1;
+        s.setSpherePara(para, material, id);
+        sphereList.append(s);
+    }
 }

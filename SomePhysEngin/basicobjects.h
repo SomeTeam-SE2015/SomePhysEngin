@@ -76,5 +76,21 @@ struct Vertex
     void setVertexPara(double* para, QString n, QString m);
 };
 
+struct Body
+{
+    int id;
+    Position velocity;
+    double mass;
+};
+
+struct Sphere
+{
+    QString material;
+    Position position;
+    double radius;
+    Body body;
+    void setSpherePara(double* para, QString m, int i);
+};
+
 #endif // BASICOBJECTS
 

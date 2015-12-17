@@ -1,19 +1,19 @@
-#include "vertexparaedit.h"
-#include "ui_vertexparaedit.h"
+#include "sphereparaedit.h"
+#include "ui_sphereparaedit.h"
 
-VertexParaEdit::VertexParaEdit(QWidget *parent) :
+SphereParaEdit::SphereParaEdit(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::VertexParaEdit)
+    ui(new Ui::SphereParaEdit)
 {
     ui->setupUi(this);
 }
 
-VertexParaEdit::~VertexParaEdit()
+SphereParaEdit::~SphereParaEdit()
 {
     delete ui;
 }
 
-void VertexParaEdit::setVertexPara()
+void SphereParaEdit::setSpherePara()
 {
     para[0] = ui->xDoubleSpinBox->value();
     para[1] = ui->xDoubleSpinBox_2->value();
@@ -26,12 +26,12 @@ void VertexParaEdit::setVertexPara()
     para[8] = ui->comboBox->currentIndex();
 }
 
-double *VertexParaEdit::getVertexPara()
+double *SphereParaEdit::getSpherePara()
 {
     return para;
 }
 
-void VertexParaEdit::showMaterialList(QStringList materialList)
+void SphereParaEdit::showMaterialList(QStringList materialList)
 {
     ui->comboBox->clear();
     ui->comboBox->addItems(materialList);

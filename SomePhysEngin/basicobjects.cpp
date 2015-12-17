@@ -21,3 +21,17 @@ void Vertex::setVertexPara(double *para, QString n, QString m)
     name = n;
     material = m;
 }
+
+void Sphere::setSpherePara(double *para, QString m, int i)
+{
+    position.x = para[0];
+    position.y = para[1];
+    position.z = para[2];
+    radius = para[3];
+    body.id = i;
+    body.velocity.x = para[4];
+    body.velocity.y = para[5];
+    body.velocity.z = para[6];
+    body.mass = para[7];
+    material = m;
+}

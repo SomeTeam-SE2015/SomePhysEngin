@@ -32,7 +32,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>Essential parameters</string>
+          <string>Essential Parameters</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_2">
@@ -45,7 +45,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>Materials</string>
+          <string>Choose Materials</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_3">
@@ -58,7 +58,20 @@
           </rect>
          </property>
          <property name="text">
-          <string>Vertex</string>
+          <string>Add Vertex</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>410</y>
+           <width>161</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Add Sphere</string>
          </property>
         </widget>
        </widget>

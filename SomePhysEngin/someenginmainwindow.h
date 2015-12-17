@@ -4,12 +4,14 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QList>
+#include <stdio.h>
 #include "enginviewer.h"
 #include "scenegeneratortest.h"
 #include "essentialpara.h"
 #include "essentialparaedit.h"
 #include "materialparaedit.h"
 #include "vertexparaedit.h"
+#include "sphereparaedit.h"
 
 namespace Ui {
 class SomeEnginMainWindow;
@@ -38,15 +40,20 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_4_clicked();
+
 private:
     Ui::SomeEnginMainWindow *ui;
     QTimer *m_timer;
     EssentialPara essentialPara;
-    EssentialParaEdit essentialParaEdit;
-    MaterialParaEdit materialParaEdit;
     bool MaterialChoice[7]{0};
     QList<Vertex> vertexList;
+    QList<Sphere> sphereList;
+
+    EssentialParaEdit essentialParaEdit;
+    MaterialParaEdit materialParaEdit;
     VertexParaEdit vertexParaEdit;
+    SphereParaEdit sphereParaEdit;
 
     QStringList getMaterialList();
 };
