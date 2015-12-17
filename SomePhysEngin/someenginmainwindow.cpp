@@ -1,5 +1,6 @@
 #include "someenginmainwindow.h"
 #include "ui_someenginmainwindow.h"
+#include "aboutdialog.h"
 
 #include <QFileDialog>
 
@@ -37,4 +38,10 @@ void SomeEnginMainWindow::on_pushButton_clicked()
             parameters[i] = para[i];
     }
     this->essentialPara.setEssentialPara(parameters);
+}
+
+void SomeEnginMainWindow::on_action_triggered()
+{
+    AboutDialog about;
+    about.exec();
 }
