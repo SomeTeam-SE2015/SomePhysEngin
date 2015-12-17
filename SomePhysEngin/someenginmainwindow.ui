@@ -22,6 +22,19 @@
         <property name="title">
          <string>设置</string>
         </property>
+        <widget class="QPushButton" name="pushButton">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>200</y>
+           <width>161</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Essential parameters</string>
+         </property>
+        </widget>
        </widget>
       </item>
       <item>

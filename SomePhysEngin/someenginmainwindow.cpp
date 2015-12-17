@@ -1,7 +1,7 @@
 #include "someenginmainwindow.h"
 #include "ui_someenginmainwindow.h"
 
-#include "QFileDialog"
+#include <QFileDialog>
 
 SomeEnginMainWindow::SomeEnginMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -23,4 +23,18 @@ void SomeEnginMainWindow::on_load_scene_triggered()
 {
     QString fileName = QFileDialog::getOpenFileName(this,tr("Load file"),"../reference/PhysicalEngine/p5out/scenes","Scene(* scene)");
     ui->enginViewer->setPlaceholderText(fileName);
+}
+
+void SomeEnginMainWindow::on_pushButton_clicked()
+{
+    EssentialParaEdit dialog;
+    double parameters[27]{0};
+    if (dialog.exec() == QDialog::Accepted)
+    {
+        dialog.setEssentialPara();
+        double *para = dialog.getEssentialPara();
+        for (int i = 0; i < 27; i++)
+            parameters[i] = para[i];
+    }
+    this->essentialPara.setEssentialPara(parameters);
 }

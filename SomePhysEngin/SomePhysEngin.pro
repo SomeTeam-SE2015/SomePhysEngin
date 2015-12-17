@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -24,7 +24,9 @@ SOURCES += main.cpp\
     tinyxml/tinyxmlerror.cpp \
     tinyxml/tinyxmlparser.cpp \
 	enginviewer.cpp \
-    scenegeneratortest.cpp
+    scenegeneratortest.cpp \
+    essentialparaedit.cpp \
+    essentialpara.cpp
 
 #SOURCES += application/camera_roam.cpp \
 #    application/imageio.cpp \
@@ -54,7 +56,10 @@ HEADERS  += someenginmainwindow.h \
     math/vector.hpp \
 	tinyxml/tinyxml.h \
 	enginviewer.h \
-    scenegeneratortest.h
+    scenegeneratortest.h \
+    essentialparaedit.h \
+    essentialpara.h \
+    basicobjects.h
 
 #HEADERS  += include/GL/glew.h \
 #    include/png.h \
@@ -126,7 +131,8 @@ HEADERS  += someenginmainwindow.h \
 #    scene/sphere.hpp \
 #    scene/triangle.hpp
 
-FORMS    += someenginmainwindow.ui
+FORMS    += someenginmainwindow.ui \
+    essentialparaedit.ui
 
 #LIBS += -L$$PWD/lib/ -lglew32 \
 #        -L$$PWD/lib/ -llibpng

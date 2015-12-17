@@ -5,6 +5,8 @@
 #include <QTimer>
 #include "enginviewer.h"
 #include "scenegeneratortest.h"
+#include "essentialpara.h"
+#include "essentialparaedit.h"
 
 namespace Ui {
 class SomeEnginMainWindow;
@@ -23,9 +25,13 @@ public:
 private slots:
     void on_load_scene_triggered();
 
+    void on_pushButton_clicked();
+
+
 private:
     Ui::SomeEnginMainWindow *ui;
     QTimer *m_timer;
+    EssentialPara essentialPara;
 };
 
 #endif // SOMEENGINMAINWINDOW_H
