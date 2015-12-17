@@ -35,3 +35,15 @@ void Sphere::setSpherePara(double *para, QString m, int i)
     body.mass = para[7];
     material = m;
 }
+
+void Triangle::setTriPara(double *para, QString p1, QString p2, QString p3, QString m, int i)
+{
+    position.x = para[0];
+    position.y = para[1];
+    position.z = para[2];
+    vertexes[0] =  p1;
+    vertexes[1] =  p2;
+    vertexes[2] =  p3;
+    material = m;
+    body.id = i;
+}

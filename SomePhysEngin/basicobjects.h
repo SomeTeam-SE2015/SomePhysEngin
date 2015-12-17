@@ -92,5 +92,14 @@ struct Sphere
     void setSpherePara(double* para, QString m, int i);
 };
 
+struct Triangle
+{
+    QString material;
+    Position position;
+    QString vertexes[3];
+    Body body;
+    void setTriPara(double*para, QString p1, QString p2, QString p3, QString m, int i);
+};
+
 #endif // BASICOBJECTS
 

@@ -26,20 +26,20 @@
          <property name="geometry">
           <rect>
            <x>50</x>
-           <y>200</y>
+           <y>30</y>
            <width>161</width>
            <height>51</height>
           </rect>
          </property>
          <property name="text">
-          <string>Essential Parameters</string>
+          <string>Essential parameters</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_2">
          <property name="geometry">
           <rect>
            <x>50</x>
-           <y>270</y>
+           <y>100</y>
            <width>161</width>
            <height>51</height>
           </rect>
@@ -52,7 +52,7 @@
          <property name="geometry">
           <rect>
            <x>50</x>
-           <y>340</y>
+           <y>170</y>
            <width>161</width>
            <height>51</height>
           </rect>
@@ -65,13 +65,26 @@
          <property name="geometry">
           <rect>
            <x>50</x>
-           <y>410</y>
+           <y>240</y>
            <width>161</width>
            <height>51</height>
           </rect>
          </property>
          <property name="text">
           <string>Add Sphere</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>310</y>
+           <width>161</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Add Triangle</string>
          </property>
         </widget>
        </widget>

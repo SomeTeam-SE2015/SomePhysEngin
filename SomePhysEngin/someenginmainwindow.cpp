@@ -14,6 +14,8 @@ SomeEnginMainWindow::SomeEnginMainWindow(QWidget *parent) :
     m_timer->start();
     connect(this, SIGNAL(sendMaterialList(QStringList)), &vertexParaEdit, SLOT(showMaterialList(QStringList)));
     connect(this, SIGNAL(sendMaterialList(QStringList)), &sphereParaEdit, SLOT(showMaterialList(QStringList)));
+    connect(this, SIGNAL(sendMaterialList(QStringList)), &triParaEdit, SLOT(showMaterialList(QStringList)));
+    connect(this, SIGNAL(sendVertexNum(int)), &triParaEdit, SLOT(getVertexNum(int)));
 }
 
 SomeEnginMainWindow::~SomeEnginMainWindow()
@@ -101,5 +103,25 @@ void SomeEnginMainWindow::on_pushButton_4_clicked()
         int id = sphereList.size()+1;
         s.setSpherePara(para, material, id);
         sphereList.append(s);
+    }
+}
+
+void SomeEnginMainWindow::on_pushButton_5_clicked()
+{
+    QStringList materialList = getMaterialList();
+    emit sendMaterialList(materialList);
+    emit sendVertexNum(vertexList.size());
+    if (triParaEdit.exec() == QDialog::Accepted)
+    {
+        triParaEdit.setTriPara();
+        double *para = triParaEdit.getTriPara();
+        Triangle t;
+        QString material = materialList[para[3]];
+        int id = triList.size()+1;
+        QString p1 = vertexList.at(para[4]).name;
+        QString p2 = vertexList.at(para[5]).name;
+        QString p3 = vertexList.at(para[6]).name;
+        t.setTriPara(para, p1, p2, p3, material, id);
+        triList.append(t);
     }
 }

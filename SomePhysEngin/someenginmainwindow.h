@@ -12,6 +12,7 @@
 #include "materialparaedit.h"
 #include "vertexparaedit.h"
 #include "sphereparaedit.h"
+#include "triparaedit.h"
 
 namespace Ui {
 class SomeEnginMainWindow;
@@ -29,6 +30,7 @@ public:
 
 signals:
     void sendMaterialList(QStringList);
+    void sendVertexNum(int);
 
 private slots:
     void on_load_scene_triggered();
@@ -42,6 +44,8 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_pushButton_5_clicked();
+
 private:
     Ui::SomeEnginMainWindow *ui;
     QTimer *m_timer;
@@ -49,11 +53,13 @@ private:
     bool MaterialChoice[7]{0};
     QList<Vertex> vertexList;
     QList<Sphere> sphereList;
+    QList<Triangle> triList;
 
     EssentialParaEdit essentialParaEdit;
     MaterialParaEdit materialParaEdit;
     VertexParaEdit vertexParaEdit;
     SphereParaEdit sphereParaEdit;
+    TriParaEdit triParaEdit;
 
     QStringList getMaterialList();
 };
