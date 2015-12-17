@@ -20,6 +20,9 @@ public:
     explicit SomeEnginMainWindow(QWidget *parent = 0);
     ~SomeEnginMainWindow();
 
+private slots:
+    void on_load_scene_triggered();
+
 private:
     Ui::SomeEnginMainWindow *ui;
     QTimer *m_timer;

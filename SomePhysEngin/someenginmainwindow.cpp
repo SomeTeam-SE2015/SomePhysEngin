@@ -1,6 +1,8 @@
 #include "someenginmainwindow.h"
 #include "ui_someenginmainwindow.h"
 
+#include "QFileDialog"
+
 SomeEnginMainWindow::SomeEnginMainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::SomeEnginMainWindow)
@@ -15,4 +17,10 @@ SomeEnginMainWindow::SomeEnginMainWindow(QWidget *parent) :
 SomeEnginMainWindow::~SomeEnginMainWindow()
 {
     delete ui;
+}
+
+void SomeEnginMainWindow::on_load_scene_triggered()
+{
+    QString fileName = QFileDialog::getOpenFileName(this,tr("Load file"),"../reference/PhysicalEngine/p5out/scenes","Scene(* scene)");
+    ui->enginViewer->setPlaceholderText(fileName);
 }

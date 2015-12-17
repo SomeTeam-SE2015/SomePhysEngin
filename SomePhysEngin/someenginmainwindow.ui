@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1096</width>
-    <height>643</height>
+    <height>648</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -69,22 +69,22 @@
      <x>0</x>
      <y>0</y>
      <width>1096</width>
-     <height>23</height>
+     <height>25</height>
     </rect>
    </property>
-   <widget class="QMenu" name="document">
-    <property name="title">
-     <string>文件</string>
-    </property>
-    <addaction name="load_scene"/>
-    <addaction name="save_scene"/>
-   </widget>
    <widget class="QMenu" name="helps">
     <property name="title">
-     <string>帮助</string>
+     <string>&amp;Help</string>
     </property>
     <addaction name="help"/>
     <addaction name="action"/>
+   </widget>
+   <widget class="QMenu" name="document">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="load_scene"/>
+    <addaction name="save_scene"/>
    </widget>
    <addaction name="document"/>
    <addaction name="helps"/>
