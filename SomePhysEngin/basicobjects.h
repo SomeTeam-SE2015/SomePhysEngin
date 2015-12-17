@@ -1,6 +1,8 @@
 #ifndef BASICOBJECTS
 #define BASICOBJECTS
 
+#include <QString>
+
 struct Position
 {
     double x;
@@ -37,6 +39,26 @@ struct PointLight
     Position position;
     Color color;
 };
+
+struct Material
+{
+    Material(Color a, Color d, Color s, double r, QString str);
+    Color ambient;
+    Color diffuse;
+    Color specular;
+    double refractive_index;
+    QString name;
+};
+
+enum MaterialType {red, sred, green ,sgreen, blue, sblue, mirror};
+
+//typedef Material MaterialRed(Color(1,0,0), Color(1,0,0), Color(0,0,0), 0, QString("red"));
+//typedef Material MaterialSred(Color(1,0,0), Color(1,0,0), Color(1,1,1), 0, QString("sred"));
+//typedef Material MaterialGreen(Color(0,1,0), Color(0,1,0), Color(0,0,0), 0, QString("green"));
+//typedef Material MaterialSGreen(Color(0,1,0), Color(0,1,0), Color(1,1,1), 0, QString("sgreen"));
+//typedef Material MaterialBlue(Color(0,0,1), Color(0,0,1), Color(0,0,0), 0, QString("blue"));
+//typedef Material MaterialSBlue(Color(0,0,1), Color(0,0,1), Color(0,1,1), 0, QString("sblue"));
+//typedef Material MaterialMirror(Color(0,0,0), Color(0,0,0), Color(1,1,1), 0, QString("mirror"));
 
 #endif // BASICOBJECTS
 

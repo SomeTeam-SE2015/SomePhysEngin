@@ -12,6 +12,8 @@ SomeEnginMainWindow::SomeEnginMainWindow(QWidget *parent) :
     m_timer->setInterval(1);
     connect(m_timer, SIGNAL(timeout()), ui->enginViewer, SLOT(update()));
     m_timer->start();
+    for (int i = 0; i < 7; i++)
+        MaterialChoice[i] = 0;
 }
 
 SomeEnginMainWindow::~SomeEnginMainWindow()
@@ -37,4 +39,15 @@ void SomeEnginMainWindow::on_pushButton_clicked()
             parameters[i] = para[i];
     }
     this->essentialPara.setEssentialPara(parameters);
+}
+
+void SomeEnginMainWindow::on_pushButton_2_clicked()
+{
+    MaterialParaEdit dialog;
+    if (dialog.exec() == QDialog::Accepted)
+    {
+        bool *MC = dialog.getMaterialPara();
+        for (int i = 0; i < 7; i++)
+            MaterialChoice[i] = MC[i];
+    }
 }

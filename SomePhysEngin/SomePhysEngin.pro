@@ -26,7 +26,9 @@ SOURCES += main.cpp\
 	enginviewer.cpp \
     scenegeneratortest.cpp \
     essentialparaedit.cpp \
-    essentialpara.cpp
+    essentialpara.cpp \
+    materialparaedit.cpp \
+    basicobjects.cpp
 
 #SOURCES += application/camera_roam.cpp \
 #    application/imageio.cpp \
@@ -59,7 +61,8 @@ HEADERS  += someenginmainwindow.h \
     scenegeneratortest.h \
     essentialparaedit.h \
     essentialpara.h \
-    basicobjects.h
+    basicobjects.h \
+    materialparaedit.h \
 
 #HEADERS  += include/GL/glew.h \
 #    include/png.h \
@@ -132,7 +135,8 @@ HEADERS  += someenginmainwindow.h \
 #    scene/triangle.hpp
 
 FORMS    += someenginmainwindow.ui \
-    essentialparaedit.ui
+    essentialparaedit.ui \
+    materialparaedit.ui
 
 #LIBS += -L$$PWD/lib/ -lglew32 \
 #        -L$$PWD/lib/ -llibpng

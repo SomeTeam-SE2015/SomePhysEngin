@@ -7,6 +7,7 @@
 #include "scenegeneratortest.h"
 #include "essentialpara.h"
 #include "essentialparaedit.h"
+#include "materialparaedit.h"
 
 namespace Ui {
 class SomeEnginMainWindow;
@@ -28,10 +29,13 @@ private slots:
     void on_pushButton_clicked();
 
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::SomeEnginMainWindow *ui;
     QTimer *m_timer;
     EssentialPara essentialPara;
+    bool MaterialChoice[7];
 };
 
 #endif // SOMEENGINMAINWINDOW_H
