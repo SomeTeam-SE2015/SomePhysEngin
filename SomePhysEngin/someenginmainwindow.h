@@ -13,6 +13,8 @@
 #include "vertexparaedit.h"
 #include "sphereparaedit.h"
 #include "triparaedit.h"
+#include "planeparaedit.h"
+#include "springparaedit.h"
 
 namespace Ui {
 class SomeEnginMainWindow;
@@ -31,6 +33,7 @@ public:
 signals:
     void sendMaterialList(QStringList);
     void sendVertexNum(int);
+    void sendIdNum(int);
 
 private slots:
     void on_load_scene_triggered();
@@ -46,6 +49,10 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
 private:
     Ui::SomeEnginMainWindow *ui;
     QTimer *m_timer;
@@ -54,12 +61,16 @@ private:
     QList<Vertex> vertexList;
     QList<Sphere> sphereList;
     QList<Triangle> triList;
+    QList<Plane> planeList;
+    QList<Spring> springList;
 
     EssentialParaEdit essentialParaEdit;
     MaterialParaEdit materialParaEdit;
     VertexParaEdit vertexParaEdit;
     SphereParaEdit sphereParaEdit;
     TriParaEdit triParaEdit;
+    PlaneParaEdit planeParaEdit;
+    SpringParaEdit springParaEdit;
 
     QStringList getMaterialList();
 };

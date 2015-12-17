@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>VertexParaEdit</class>
- <widget class="QDialog" name="VertexParaEdit">
+ <class>PlaneParaEdit</class>
+ <widget class="QDialog" name="PlaneParaEdit">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>218</height>
+    <height>147</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Edit vertex</string>
+   <string>Dialog</string>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>180</y>
+     <x>40</x>
+     <y>110</y>
      <width>341</width>
      <height>32</height>
     </rect>
@@ -34,56 +34,117 @@
     <rect>
      <x>10</x>
      <y>10</y>
-     <width>389</width>
-     <height>151</height>
+     <width>380</width>
+     <height>80</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="2">
-     <layout class="QFormLayout" name="formLayout_2">
-      <item row="0" column="0" colspan="2">
-       <layout class="QFormLayout" name="formLayout_4">
-        <item row="0" column="0">
-         <widget class="QLabel" name="xLabel_2">
-          <property name="text">
-           <string>y</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QDoubleSpinBox" name="xDoubleSpinBox_2">
-          <property name="minimum">
-           <double>-100.000000000000000</double>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
     <item row="0" column="0">
      <widget class="QLabel" name="label">
-      <property name="text">
-       <string>material</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_2">
       <property name="text">
        <string>position</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_3">
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_5">
       <property name="text">
        <string>normal</string>
       </property>
      </widget>
     </item>
+    <item row="1" column="2">
+     <layout class="QFormLayout" name="formLayout_14">
+      <item row="0" column="0">
+       <widget class="QLabel" name="xLabel_7">
+        <property name="text">
+         <string>y</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QDoubleSpinBox" name="xDoubleSpinBox_7">
+        <property name="minimum">
+         <double>-100.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="2">
+     <layout class="QFormLayout" name="formLayout_11">
+      <item row="0" column="0">
+       <widget class="QLabel" name="xLabel_4">
+        <property name="text">
+         <string>y</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QDoubleSpinBox" name="xDoubleSpinBox_4">
+        <property name="minimum">
+         <double>-100.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
     <item row="1" column="1">
-     <layout class="QFormLayout" name="formLayout">
+     <layout class="QFormLayout" name="formLayout_13">
+      <item row="0" column="0">
+       <widget class="QLabel" name="xLabel_6">
+        <property name="text">
+         <string>x</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QDoubleSpinBox" name="xDoubleSpinBox_6">
+        <property name="minimum">
+         <double>-100.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="3">
+     <layout class="QFormLayout" name="formLayout_12">
+      <item row="0" column="0">
+       <widget class="QLabel" name="xLabel_5">
+        <property name="text">
+         <string>z</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QDoubleSpinBox" name="xDoubleSpinBox_5">
+        <property name="minimum">
+         <double>-100.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="3">
+     <layout class="QFormLayout" name="formLayout_15">
+      <item row="0" column="0">
+       <widget class="QLabel" name="xLabel_8">
+        <property name="text">
+         <string>z</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QDoubleSpinBox" name="xDoubleSpinBox_8">
+        <property name="minimum">
+         <double>-100.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <layout class="QFormLayout" name="formLayout_9">
       <item row="0" column="0">
        <widget class="QLabel" name="xLabel">
         <property name="text">
@@ -100,137 +161,18 @@
       </item>
      </layout>
     </item>
-    <item row="3" column="0">
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>tex coord</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="3">
-     <layout class="QFormLayout" name="formLayout_3">
-      <item row="0" column="0" colspan="2">
-       <layout class="QFormLayout" name="formLayout_5">
-        <item row="0" column="0">
-         <widget class="QLabel" name="xLabel_3">
-          <property name="text">
-           <string>z</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QDoubleSpinBox" name="xDoubleSpinBox_3">
-          <property name="minimum">
-           <double>-100.000000000000000</double>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
-    <item row="2" column="1">
-     <layout class="QFormLayout" name="formLayout_6">
-      <item row="0" column="0">
-       <widget class="QLabel" name="xLabel_4">
-        <property name="text">
-         <string>x</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QDoubleSpinBox" name="xDoubleSpinBox_4">
-        <property name="minimum">
-         <double>-100.000000000000000</double>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="2" column="2">
-     <layout class="QFormLayout" name="formLayout_7">
-      <item row="0" column="0">
-       <widget class="QLabel" name="xLabel_5">
-        <property name="text">
-         <string>y</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QDoubleSpinBox" name="xDoubleSpinBox_5">
-        <property name="minimum">
-         <double>-100.000000000000000</double>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="2" column="3">
-     <layout class="QFormLayout" name="formLayout_8">
-      <item row="0" column="0">
-       <widget class="QLabel" name="xLabel_6">
-        <property name="text">
-         <string>z</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QDoubleSpinBox" name="xDoubleSpinBox_6">
-        <property name="minimum">
-         <double>-100.000000000000000</double>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="3" column="2">
-     <layout class="QFormLayout" name="formLayout_9">
-      <item row="0" column="0">
-       <widget class="QLabel" name="xLabel_7">
-        <property name="text">
-         <string>u</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QDoubleSpinBox" name="xDoubleSpinBox_7">
-        <property name="minimum">
-         <double>-100.000000000000000</double>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="3" column="3">
-     <layout class="QFormLayout" name="formLayout_10">
-      <item row="0" column="0">
-       <widget class="QLabel" name="xLabel_8">
-        <property name="text">
-         <string>x</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QDoubleSpinBox" name="xDoubleSpinBox_8">
-        <property name="minimum">
-         <double>-100.000000000000000</double>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="0" column="2" colspan="2">
-     <widget class="QComboBox" name="comboBox"/>
-    </item>
    </layout>
   </widget>
+  <zorder>buttonBox</zorder>
+  <zorder>gridLayoutWidget</zorder>
+  <zorder>label_2</zorder>
  </widget>
  <resources/>
  <connections>
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>VertexParaEdit</receiver>
+   <receiver>PlaneParaEdit</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -246,7 +188,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>VertexParaEdit</receiver>
+   <receiver>PlaneParaEdit</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

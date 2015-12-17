@@ -31,7 +31,9 @@ SOURCES += main.cpp\
     basicobjects.cpp \
     vertexparaedit.cpp \
     sphereparaedit.cpp \
-    triparaedit.cpp
+    triparaedit.cpp \
+    planeparaedit.cpp \
+    springparaedit.cpp
 
 #SOURCES += application/camera_roam.cpp \
 #    application/imageio.cpp \
@@ -68,7 +70,9 @@ HEADERS  += someenginmainwindow.h \
     materialparaedit.h \
     vertexparaedit.h \
     sphereparaedit.h \
-    triparaedit.h
+    triparaedit.h \
+    planeparaedit.h \
+    springparaedit.h
 
 #HEADERS  += include/GL/glew.h \
 #    include/png.h \
@@ -145,7 +149,9 @@ FORMS    += someenginmainwindow.ui \
     materialparaedit.ui \
     vertexparaedit.ui \
     sphereparaedit.ui \
-    triparaedit.ui
+    triparaedit.ui \
+    planeparaedit.ui \
+    springparaedit.ui
 
 #LIBS += -L$$PWD/lib/ -lglew32 \
 #        -L$$PWD/lib/ -llibpng

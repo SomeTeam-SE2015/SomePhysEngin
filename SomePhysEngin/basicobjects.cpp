@@ -47,3 +47,26 @@ void Triangle::setTriPara(double *para, QString p1, QString p2, QString p3, QStr
     material = m;
     body.id = i;
 }
+
+void Plane::setPlanePara(double *para, int i)
+{
+    position.x = para[0];
+    position.y = para[1];
+    position.z = para[2];
+    normal.x = para[3];
+    normal.y = para[4];
+    normal.z = para[5];
+    id = i;
+}
+
+void Spring::setSpringPara(double *para)
+{
+    constant = para[0];
+    equilibrium = para[1];
+    offset2.x = para[2];
+    offset2.y = para[3];
+    offset2.z = para[4];
+    damping = para[5];
+    body1.id = para[6];
+    body2.id = para[7];
+}

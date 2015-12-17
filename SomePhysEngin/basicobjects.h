@@ -101,5 +101,24 @@ struct Triangle
     void setTriPara(double*para, QString p1, QString p2, QString p3, QString m, int i);
 };
 
+struct Plane
+{
+    int id;
+    Position position;
+    Position normal;
+    void setPlanePara(double* para, int i);
+};
+
+struct Spring
+{
+    double constant;
+    double equilibrium;
+    Body body1;
+    Body body2;
+    Position offset2;
+    double damping;
+    void setSpringPara(double* para);
+};
+
 #endif // BASICOBJECTS
 

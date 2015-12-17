@@ -16,6 +16,7 @@ SomeEnginMainWindow::SomeEnginMainWindow(QWidget *parent) :
     connect(this, SIGNAL(sendMaterialList(QStringList)), &sphereParaEdit, SLOT(showMaterialList(QStringList)));
     connect(this, SIGNAL(sendMaterialList(QStringList)), &triParaEdit, SLOT(showMaterialList(QStringList)));
     connect(this, SIGNAL(sendVertexNum(int)), &triParaEdit, SLOT(getVertexNum(int)));
+    connect(this,SIGNAL(sendIdNum(int)), &springParaEdit, SLOT(getIdNum(int)));
 }
 
 SomeEnginMainWindow::~SomeEnginMainWindow()
@@ -117,11 +118,41 @@ void SomeEnginMainWindow::on_pushButton_5_clicked()
         double *para = triParaEdit.getTriPara();
         Triangle t;
         QString material = materialList[para[3]];
-        int id = triList.size()+1;
+        int id = sphereList.size() + triList.size() + 1;
         QString p1 = vertexList.at(para[4]).name;
         QString p2 = vertexList.at(para[5]).name;
         QString p3 = vertexList.at(para[6]).name;
         t.setTriPara(para, p1, p2, p3, material, id);
         triList.append(t);
+    }
+}
+
+void SomeEnginMainWindow::on_pushButton_6_clicked()
+{
+    double parameters[6]{0};
+    if (planeParaEdit.exec() == QDialog::Accepted)
+    {
+        planeParaEdit.setPlanePara();
+        double *para = planeParaEdit.getPlanePara();
+        Plane p;
+        int id = sphereList.size() + triList.size() + planeList.size() + 1;
+        p.setPlanePara(para, id);
+        planeList.append(p);
+    }
+}
+
+void SomeEnginMainWindow::on_pushButton_7_clicked()
+{
+    double parameters[8]{0};
+    emit sendIdNum(sphereList.size() + triList.size() + planeList.size());
+    if (springParaEdit.exec() == QDialog::Accepted)
+    {
+        springParaEdit.setSpringPara();
+        double *para = springParaEdit.getSpringPara();
+        para[7] = para[7]+1;
+        para[8] = para[8]+1;
+        Spring s;
+        s.setSpringPara(para);
+        springList.append(s);
     }
 }
