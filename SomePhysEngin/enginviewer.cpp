@@ -7,7 +7,7 @@
  * 2015/12
  */
 
-#include "application/application.hpp"
+//#include "application/application.hpp"
 #include "application/camera_roam.hpp"
 #include "application/imageio.hpp"
 #include "application/scene_loader.hpp"
@@ -16,6 +16,7 @@
 #include <GL/glu.h>
 #include <QMessageBox>
 #include <iostream>
+#include <string>
 
 #define DEFAULT_WIDTH 800
 #define DEFAULT_HEIGHT 600
@@ -28,15 +29,15 @@ static const size_t NUM_GL_LIGHTS = 8;
 void render_scene( const Scene& scene );
 
 EnginViewer::EnginViewer(QWidget *parent) : QOpenGLWidget(parent),
-    width(DEFAULT_WIDTH), height(DEFAULT_HEIGHT)
+    width(DEFAULT_WIDTH), height(DEFAULT_HEIGHT), trackball(width, height),
+    pressed_button(Qt::NoButton)
 {
-
 }
 
 void EnginViewer::initializeGL()
 {
     initializeOpenGLFunctions();
-    FILE* file = fopen( "scenes/stars.scene", "rb" );
+    FILE* file = fopen( "scenes/spring_rotation.scene", "rb" );
     if ( !load_scene( &scene, file ) ) {
         QMessageBox::warning(this, "engin-demo","Error loading scene",
                              QMessageBox::Ok);
@@ -49,6 +50,7 @@ void EnginViewer::initializeGL()
                              QMessageBox::Ok);
         return;
     }
+    trackball.init(scene.camera);
 }
 
 void EnginViewer::reset_scene(FILE *file)
@@ -66,12 +68,13 @@ void EnginViewer::reset_scene(FILE *file)
                              QMessageBox::Ok);
         return;
     }
+    trackball.init(scene.camera);
 }
 
-void EnginViewer::reset_scene(const std::string& scene_content)
+void EnginViewer::reset_scene(const QString& scene_content)
 {
     // scene.reset(); scene is reset while loading file
-    if ( !parse_scene( &scene, scene_content ) ) {
+    if ( !parse_scene( &scene, scene_content.toStdString() ) ) {
         QMessageBox::warning(this, "engin-demo","Error loading scene",
                              QMessageBox::Ok);
         return;
@@ -83,12 +86,14 @@ void EnginViewer::reset_scene(const std::string& scene_content)
                              QMessageBox::Ok);
         return;
     }
+    trackball.init(scene.camera);
 }
 
 void EnginViewer::resizeGL(int w, int h)
 {
     height = h;
     width = w;
+    trackball.reAdjustTrackBall(w, h);
 }
 
 void EnginViewer::paintGL()
@@ -110,7 +115,7 @@ void EnginViewer::paintGL()
     glLoadIdentity();
 
     glPushAttrib( GL_ALL_ATTRIB_BITS );
-    render_scene( scene );
+    render_scene();
     glPopAttrib();
 
     // flush so the code doesn't have to remember to
@@ -186,7 +191,7 @@ bool EnginViewer::initApp()
     return true;
 }
 
-void render_scene( const Scene& scene )
+void EnginViewer::render_scene()
 {
     // backup state so it doesn't mess up raytrace image rendering
     glPushAttrib( GL_ALL_ATTRIB_BITS );
@@ -215,7 +220,7 @@ void render_scene( const Scene& scene )
                     camera.get_near_clip(),
                     camera.get_far_clip() );
 
-    const Vector3& campos = camera.get_position();
+    /*const Vector3& campos = camera.get_position();
     const Vector3 camref = camera.get_direction() + campos;
     const Vector3& camup = camera.get_up();
 
@@ -223,7 +228,9 @@ void render_scene( const Scene& scene )
     glLoadIdentity();
     gluLookAt( campos.x, campos.y, campos.z,
                camref.x, camref.y, camref.z,
-               camup.x,  camup.y,  camup.z );
+               camup.x,  camup.y,  camup.z );*/
+    trackball.apply();
+    glMatrixMode( GL_MODELVIEW );
     // set light data
     float arr[4];
     arr[3] = 1.0; // w is always 1
@@ -283,4 +290,49 @@ void EnginViewer::update( double delta_time )
             scene.update( step_size * speed );
         }
     }
+}
+
+
+void EnginViewer::mousePressEvent(QMouseEvent *event)
+{
+    switch(event->button())
+    {
+    case Qt::LeftButton:
+        trackball.mouseClickR(event->x(), event->y());
+        //std::cerr<<"left click: ("<<event->x()<<","<<event->y()<<std::endl;
+        break;
+    case Qt::RightButton:
+        trackball.mouseClickT(event->x(), event->y());
+        break;
+    }
+    pressed_button = event->button();
+    event->accept();
+}
+
+void EnginViewer::mouseMoveEvent(QMouseEvent *event)
+{
+    switch(pressed_button)
+    {
+    case Qt::LeftButton:
+        trackball.mouseMoveR(event->x(), event->y());
+        break;
+    case Qt::RightButton:
+        trackball.mouseMoveT(event->x(), event->y());
+        break;
+    //default:
+        //std::cerr<<event->button()<<event->x()<<", "<<event->y()<<std::endl;
+    }
+    event->accept();
+}
+
+void EnginViewer::mouseReleaseEvent(QMouseEvent *event)
+{
+    pressed_button = Qt::NoButton;
+    event->accept();
+}
+
+void EnginViewer::wheelEvent(QWheelEvent *event)
+{
+    double z = event->angleDelta().y()/120.0;
+    trackball.wheelscrool(z);
 }

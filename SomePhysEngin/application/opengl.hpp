@@ -15,7 +15,7 @@
 #include "include/GL/glew.h"
 
 #define NO_SDL_GLEXT
-//#include "include/SDL/SDL_opengl.h"
+//#include <SDL/SDL_opengl.h>
 
 #endif /* _SomeEngin_OPENGL_HPP_ */
 

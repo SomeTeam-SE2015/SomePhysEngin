@@ -19,12 +19,12 @@ SOURCES += main.cpp\
     math/math.cpp \
     math/matrix.cpp \
     math/quaternion.cpp \
-    math/vector.cpp \
+	math/vector.cpp \
+	trackball/trackball.cpp \
     tinyxml/tinyxml.cpp \
     tinyxml/tinyxmlerror.cpp \
     tinyxml/tinyxmlparser.cpp \
-    enginviewer.cpp \
-    application/camera_roam.cpp \
+	enginviewer.cpp \
     application/imageio.cpp \
     application/scene_loader.cpp \
     physics/collisions.cpp \
@@ -40,8 +40,7 @@ SOURCES += main.cpp\
     scene/model.cpp \
     scene/scene.cpp \
     scene/sphere.cpp \
-    scene/triangle.cpp \
-    application/application.cpp
+	scene/triangle.cpp
 
 HEADERS  += someenginmainwindow.h \
     math/camera.hpp \
@@ -49,7 +48,8 @@ HEADERS  += someenginmainwindow.h \
     math/math.hpp \
     math/matrix.hpp \
     math/quaternion.hpp \
-    math/vector.hpp \
+	math/vector.hpp \
+	trackball/trackball.h \
     tinyxml/tinyxml.h \
     enginviewer.h \
     include/GL/glew.h \
@@ -58,10 +58,9 @@ HEADERS  += someenginmainwindow.h \
     include/zconf.h \
     include/zlib.h \
 	include/GL/wglew.h \
-    application/camera_roam.hpp \
-    application/application.hpp \
     application/imageio.hpp \
-    application/scene_loader.hpp \
+	application/scene_loader.hpp \
+	application/opengl.hpp \
     physics/body.hpp \
     physics/collisions.hpp \
     physics/lenthsquarespring.hpp \
@@ -76,7 +75,7 @@ HEADERS  += someenginmainwindow.h \
     scene/model.hpp \
     scene/scene.hpp \
     scene/sphere.hpp \
-    scene/triangle.hpp
+	scene/triangle.hpp
 
 FORMS    += someenginmainwindow.ui
 

@@ -11,10 +11,13 @@
 #define ENGINVIEWER_H
 
 #include "scene/scene.hpp"
+#include "trackball/trackball.h"
 #include <QOpenGLWidget>
 #include <QOpenGLFunctions>
 #include <QOpenGLBuffer>
-#include <string>
+#include <QString>
+#include <QMouseEvent>
+#include <QWheelEvent>
 
 using namespace _SomeEngin;
 
@@ -26,14 +29,21 @@ public:
     ~EnginViewer(){}
 
     void reset_scene(FILE* file);
-    void reset_scene(const std::string& scene_content);
+    void reset_scene(const QString& scene_content);
 
-protected:
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+    void wheelEvent(QWheelEvent *event);
+
+private:
     Scene scene;
     double fps;
     int height, width;
     double speed;
     bool pause;
+    TrackBall trackball;
+    Qt::MouseButton pressed_button;
 
     void initializeGL();
     void resizeGL(int w, int h);
@@ -41,6 +51,7 @@ protected:
 
     bool initApp();
     void update(double delta_time );
+    void render_scene();
 };
 
 #endif // ENGINVIEWER_H
