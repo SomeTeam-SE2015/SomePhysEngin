@@ -30,6 +30,8 @@ private slots:
 
     void on_action_triggered();
 
+    void on_help_triggered();
+
 private:
     Ui::SomeEnginMainWindow *ui;
     QTimer *m_timer;
