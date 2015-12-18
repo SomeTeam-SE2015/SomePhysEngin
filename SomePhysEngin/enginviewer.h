@@ -19,8 +19,6 @@
 #include <QMouseEvent>
 #include <QWheelEvent>
 
-using namespace _SomeEngin;
-
 class EnginViewer : public QOpenGLWidget, protected QOpenGLFunctions
 {
     Q_OBJECT
@@ -37,12 +35,12 @@ public:
     void wheelEvent(QWheelEvent *event);
 
 private:
-    Scene scene;
+    _SomeEngin::Scene scene;
     double fps;
     int height, width;
     double speed;
     bool pause;
-    TrackBall trackball;
+    _SomeEngin::TrackBall trackball;
     Qt::MouseButton pressed_button;
 
     void initializeGL();

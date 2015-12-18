@@ -18,6 +18,8 @@
 #include <iostream>
 #include <string>
 
+using namespace _SomeEngin;
+
 #define DEFAULT_WIDTH 800
 #define DEFAULT_HEIGHT 600
 #define DEFAULT_FPS 30.0
@@ -26,7 +28,7 @@ static const GLenum LightConstants[] = {
     GL_LIGHT4, GL_LIGHT5, GL_LIGHT6, GL_LIGHT7
 };
 static const size_t NUM_GL_LIGHTS = 8;
-void render_scene( const Scene& scene );
+//void render_scene( const Scene& scene );
 
 EnginViewer::EnginViewer(QWidget *parent) : QOpenGLWidget(parent),
     width(DEFAULT_WIDTH), height(DEFAULT_HEIGHT), trackball(width, height),
@@ -100,14 +102,11 @@ void EnginViewer::paintGL()
 {
     update( 1.0 / fps );
     glViewport( 0, 0, width, height );
-
     // fix camera aspect
     Camera& camera = scene.camera;
     camera.aspect = real_t( width ) / real_t( height );
-
     // clear buffer
     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
-
     // reset matrices
     glMatrixMode( GL_PROJECTION );
     glLoadIdentity();
@@ -130,14 +129,12 @@ bool EnginViewer::initApp()
     }
     glPixelStorei( GL_UNPACK_ALIGNMENT, 1 );
     glPixelStorei( GL_PACK_ALIGNMENT, 1 );
-
     bool load_gl = true;
     pause = false;
     speed = 1.0;
     try {
         Material* const* materials = scene.get_materials();
         Mesh* const* meshes = scene.get_meshes();
-
         // load all textures
         for ( size_t i = 0; i < scene.num_materials(); ++i ) {
             if ( !materials[i]->load() || ( load_gl && !materials[i]->create_gl_data() ) ) {
@@ -145,7 +142,6 @@ bool EnginViewer::initApp()
                 return false;
             }
         }
-
         // load all meshes
         for ( size_t i = 0; i < scene.num_meshes(); ++i ) {
             if ( !meshes[i]->load() || ( load_gl && !meshes[i]->create_gl_data() ) ) {
@@ -153,27 +149,21 @@ bool EnginViewer::initApp()
                 return false;
             }
         }
-
     } catch ( std::bad_alloc const& ) {
         std::cerr << "Out of memory error while initializing scene\n.";
         return false;
     }
-
     // set the gl state
     if ( load_gl ) {
         float arr[4];
         arr[3] = 1.0; // alpha is always 1
-
         glClearColor(scene.background_color.r,
                      scene.background_color.g,
                      scene.background_color.b,
                      1.0f );
-
         scene.ambient_light.to_array( arr );
         glLightModelfv( GL_LIGHT_MODEL_AMBIENT, arr );
-
         const PointLight* lights = scene.get_lights();
-
         for ( size_t i = 0; i < NUM_GL_LIGHTS && i < scene.num_lights(); i++ ) {
             const PointLight& light = lights[i];
             glEnable( LightConstants[i] );
@@ -184,7 +174,6 @@ bool EnginViewer::initApp()
             glLightf( LightConstants[i], GL_LINEAR_ATTENUATION, light.attenuation.linear );
             glLightf( LightConstants[i], GL_QUADRATIC_ATTENUATION, light.attenuation.quadratic );
         }
-
         glLightModeli( GL_LIGHT_MODEL_TWO_SIDE, GL_TRUE );
     }
 
