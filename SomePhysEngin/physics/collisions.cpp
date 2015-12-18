@@ -26,14 +26,18 @@ bool collides( SphereBody& body1, SphereBody& body2, real_t collision_damping )
 bool collides( SphereBody& body1, TriangleBody& body2, real_t collision_damping )
 {
     // TODO detect collision. If there is one, update velocity
-    Vector3 relative_posi = body1.position - body2.vertices[0] - body2.position;
+    Vector3 relative_posi = body1.position - body2.vertices[0];
 	Vector3 edge[3] = { body2.vertices[0] - body2.vertices[1],
 		body2.vertices[1] - body2.vertices[2], 
 		body2.vertices[2] - body2.vertices[0]};
 	Vector3 normal = normalize(cross(edge[0], edge[1]));
 	real_t dist = dot(relative_posi, normal);
-	if (body1.radius >= abs(dist) && 
-		dot(relative_posi, normal) * dot(body1.velocity, normal) < 0)
+    if (dist < 0)
+    {
+        dist = -dist;
+        normal = -normal;
+    }
+    if (body1.radius >= abs(dist) && dot(body1.velocity, normal) < 0)
 	{
 		relative_posi = relative_posi - normal * dist; //relative posi in tri plane to V0: r
 		/* point in triangle:
@@ -59,6 +63,9 @@ bool collides( SphereBody& body1, TriangleBody& body2, real_t collision_damping 
 			}
 			body1.velocity -= perp_velocity * 2;
 			body1.velocity *= (1 - collision_damping);
+            Vector3 res_omega = cross(normal, body1.velocity)/body1.radius;
+            body1.angular_velocity += (1-collision_damping)*
+                    (res_omega - body1.angular_velocity);
 			return true;
 		}
 		//TO DO: other critical situation
