@@ -29,35 +29,35 @@ bool* MaterialParaEdit::getMaterialPara()
 
 void MaterialParaEdit::on_checkBox_clicked()
 {
-    ui->label->setPixmap(QPixmap("../reference/PhysicalEngine/p5out/images/red.jpg"));
+    ui->label->setPixmap(QPixmap("images/red.jpg"));
 }
 
 void MaterialParaEdit::on_checkBox_2_clicked()
 {
-    ui->label->setPixmap(QPixmap("../reference/PhysicalEngine/p5out/images/sred.jpg"));
+    ui->label->setPixmap(QPixmap("images/sred.jpg"));
 }
 
 void MaterialParaEdit::on_checkBox_3_clicked()
 {
-    ui->label->setPixmap(QPixmap("../reference/PhysicalEngine/p5out/images/green.jpg"));
+    ui->label->setPixmap(QPixmap("images/green.jpg"));
 }
 
 void MaterialParaEdit::on_checkBox_4_clicked()
 {
-    ui->label->setPixmap(QPixmap("../reference/PhysicalEngine/p5out/images/sgreen.jpg"));
+    ui->label->setPixmap(QPixmap("images/sgreen.jpg"));
 }
 
 void MaterialParaEdit::on_checkBox_5_clicked()
 {
-    ui->label->setPixmap(QPixmap("../reference/PhysicalEngine/p5out/images/blue.jpg"));
+    ui->label->setPixmap(QPixmap("images/blue.jpg"));
 }
 
 void MaterialParaEdit::on_checkBox_6_clicked()
 {
-    ui->label->setPixmap(QPixmap("../reference/PhysicalEngine/p5out/images/sblue.jpg"));
+    ui->label->setPixmap(QPixmap("images/sblue.jpg"));
 }
 
 void MaterialParaEdit::on_checkBox_7_clicked()
 {
-    ui->label->setPixmap(QPixmap("../reference/PhysicalEngine/p5out/images/mirror.jpg"));
+    ui->label->setPixmap(QPixmap("images/mirror.jpg"));
 }

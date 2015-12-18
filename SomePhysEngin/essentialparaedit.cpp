@@ -8,6 +8,8 @@ EssentialParaEdit::EssentialParaEdit(QWidget *parent) :
     ui(new Ui::EssentialParaEdit)
 {
     ui->setupUi(this);
+    for (int i = 0; i < 27; i++)
+        para[i] = 0;
 }
 
 EssentialParaEdit::~EssentialParaEdit()
