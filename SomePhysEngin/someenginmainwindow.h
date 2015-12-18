@@ -35,6 +35,7 @@ signals:
     void sendMaterialList(QStringList);
     void sendVertexNum(int);
     void sendIdNum(int);
+    void sendFileName(QString);
 
 private slots:
     void on_load_scene_triggered();
@@ -56,6 +57,8 @@ private slots:
 
     void on_save_scene_triggered();
 
+    void on_pushButton_8_clicked();
+
 private:
     Ui::SomeEnginMainWindow *ui;
     QTimer *m_timer;
@@ -76,7 +79,7 @@ private:
     SpringParaEdit springParaEdit;
 
     QStringList getMaterialList();
-    void saveToScene(QStringList material);
+    void saveToScene(QString fileName);
     QDomElement savePositionToNode(QDomDocument doc, QDomElement node, Position position);
     QDomElement saveColorToNode(QDomDocument doc, QDomElement node, Color color);
     QDomElement saveMaterialToNode(QDomDocument doc, QDomElement node, Material material);
