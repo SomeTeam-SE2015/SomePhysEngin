@@ -67,8 +67,8 @@
       <item>
        <widget class="QLabel" name="Author">
         <property name="text">
-         <string>By SomeTeam with:
-CareF(L.M.), YuCosine(Y.X.T.), 
+         <string>By &lt;a href=&quot;https://github.com/SomeTeam-SE2015/SomePhysEngin&quot;&gt;SomeTeam&lt;/a&gt; (THU SE2015):&lt;br&gt;
+CareF(L.M.), YuCosine(Y.X.T.), &lt;br&gt;
 phycept (L.Y.), HaomingPeng (P.H.M.)</string>
         </property>
         <property name="alignment">

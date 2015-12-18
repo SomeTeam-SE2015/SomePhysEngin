@@ -29,7 +29,7 @@ SOURCES += main.cpp\
     essentialparaedit.cpp \
     essentialpara.cpp \
     aboutdialog.cpp \
-    raedit.cpp \
+	materialparaedit.cpp \
     basicobjects.cpp \
     vertexparaedit.cpp \
     sphereparaedit.cpp \
