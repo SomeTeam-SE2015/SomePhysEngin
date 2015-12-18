@@ -21,7 +21,7 @@ SomeEnginMainWindow::SomeEnginMainWindow(QWidget *parent) :
     connect(this, SIGNAL(sendMaterialList(QStringList)), &triParaEdit, SLOT(showMaterialList(QStringList)));
     connect(this, SIGNAL(sendVertexNum(int)), &triParaEdit, SLOT(getVertexNum(int)));
     connect(this,SIGNAL(sendIdNum(int)), &springParaEdit, SLOT(getIdNum(int)));
-    connect(this,SIGNAL(sendFileName(QString)), ui->enginViewer, SLOT(reset_scene(QString)));
+    connect(this,SIGNAL(sendFileName(QString)), ui->enginViewer, SLOT(reset_scene(const QString&)));
 }
 
 SomeEnginMainWindow::~SomeEnginMainWindow()

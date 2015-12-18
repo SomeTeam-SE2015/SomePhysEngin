@@ -73,10 +73,11 @@ void EnginViewer::reset_scene(FILE *file)
     trackball.init(scene.camera);
 }
 
-void EnginViewer::reset_scene(const QString& scene_content)
+void EnginViewer::reset_scene(const QString& scene_name)
 {
     // scene.reset(); scene is reset while loading file
-    if ( !parse_scene( &scene, scene_content.toStdString() ) ) {
+    FILE* file = fopen( scene_name.toStdString().c_str(), "rb" );
+    if ( !load_scene( &scene, file ) ) {
         QMessageBox::warning(this, "engin-demo","Error loading scene",
                              QMessageBox::Ok);
         return;
@@ -100,7 +101,7 @@ void EnginViewer::resizeGL(int w, int h)
 
 void EnginViewer::paintGL()
 {
-    update( 1.0 / fps );
+    update_scene( 1.0 / fps );
     glViewport( 0, 0, width, height );
     // fix camera aspect
     Camera& camera = scene.camera;
@@ -268,7 +269,7 @@ void EnginViewer::render_scene()
     glPopAttrib();
 }
 
-void EnginViewer::update( double delta_time )
+void EnginViewer::update_scene( double delta_time )
 {
     static const size_t NUM_ITER = 20;
 

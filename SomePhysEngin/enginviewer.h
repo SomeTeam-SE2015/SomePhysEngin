@@ -26,13 +26,14 @@ public:
     EnginViewer(QWidget *parent = 0);
     ~EnginViewer(){}
 
-    void reset_scene(FILE* file);
-    void reset_scene(const QString& scene_content);
-
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
     void wheelEvent(QWheelEvent *event);
+
+public slots:
+    void reset_scene(FILE* file);
+    void reset_scene(const QString& scene_content);
 
 private:
     _SomeEngin::Scene scene;
@@ -48,7 +49,7 @@ private:
     void paintGL();
 
     bool initApp();
-    void update(double delta_time );
+    void update_scene(double delta_time );
     void render_scene();
 };
 
