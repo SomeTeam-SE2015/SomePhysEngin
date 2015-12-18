@@ -48,8 +48,9 @@ QStringList SomeEnginMainWindow::getMaterialList()
 
 void SomeEnginMainWindow::on_load_scene_triggered()
 {
-    QString fileName = QFileDialog::getOpenFileName(this,tr("Load file"),"../reference/PhysicalEngine/p5out/scenes","Scene(* scene)");
-    ui->enginViewer->setPlaceholderText(fileName);
+    QString fileName = QFileDialog::getOpenFileName(this,tr("Load file"),
+                "../reference/PhysicalEngine/p5out/scenes","Scene(* scene)");
+    emit sendFileName(fileName);
 }
 
 void SomeEnginMainWindow::on_pushButton_clicked()
