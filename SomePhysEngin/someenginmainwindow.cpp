@@ -1,7 +1,11 @@
 #include "someenginmainwindow.h"
 #include "ui_someenginmainwindow.h"
+#include "aboutdialog.h"
 
 #include <QFileDialog>
+#include <QDesktopServices>
+#include <QFileInfo>
+#include <QMessageBox>
 
 SomeEnginMainWindow::SomeEnginMainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -37,4 +41,22 @@ void SomeEnginMainWindow::on_pushButton_clicked()
             parameters[i] = para[i];
     }
     this->essentialPara.setEssentialPara(parameters);
+}
+
+void SomeEnginMainWindow::on_action_triggered()
+{
+    AboutDialog about;
+    about.exec();
+}
+
+void SomeEnginMainWindow::on_help_triggered()
+{
+    QFileInfo file("help/help.html");
+    if (file.exists() == false)
+    {
+        QMessageBox::warning(this, "engin-demo","Cannot find help file",
+                                     QMessageBox::Ok);
+        return;
+    }
+    QDesktopServices::openUrl(QUrl(file.absolutePath()+"/help.html"));
 }

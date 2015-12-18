@@ -28,6 +28,10 @@ private slots:
     void on_pushButton_clicked();
 
 
+    void on_action_triggered();
+
+    void on_help_triggered();
+
 private:
     Ui::SomeEnginMainWindow *ui;
     QTimer *m_timer;
