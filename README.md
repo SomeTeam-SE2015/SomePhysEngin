@@ -28,7 +28,7 @@
 ## 在 Qt 下运行
 请使用 msvc 的 release 模式编译, 需要复制上述 dll 文件到 release 文件夹中.
 
-TO DO
+Done
 ------
 - [X] 需求文档
 - [X] demo 的面向对象结构分析
@@ -39,3 +39,10 @@ TO DO
 - [X] 脚本生成器模块
 - [X] 帮助文档
 - [X] 展示汇报
+
+## Version
+- V1.0-alpha 软工课程展示版本, 实现需求分析的基本功能. 
+其中 [CareF](https://github.com/CareF) 完成物理引擎部分, 
+[YuCosine](https://github.com/YuCosine) 完成脚本生成模块, 
+[HaominPneg](https://github.com/HaominPeng) 完成帮助文档编写和展示 PPT 制作, 
+[phycept](https://github.com/phycept) 完成类图绘制
