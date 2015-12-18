@@ -20,6 +20,9 @@
 其中 (for Win) 使用动态链接库 `glew32.dll`, `libpng12-0.dll`, `glew32.dll` 
 和静态链接库 `glew32`, `libpng`. 这些二进制文件都有多平台版本. 多平台支持待添加.
 
+## 在 Qt 下运行
+请使用 msvc 的 release 模式编译, 需要复制上述 dll 文件到 release 文件夹中.
+
 TO DO
 ------
 - [X] 需求文档
