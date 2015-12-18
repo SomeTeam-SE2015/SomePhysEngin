@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui widgets
+QT       += core gui widgets \
+    xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,7 +28,14 @@ SOURCES += main.cpp\
     scenegeneratortest.cpp \
     essentialparaedit.cpp \
     essentialpara.cpp \
-    aboutdialog.cpp
+    aboutdialog.cpp \
+    raedit.cpp \
+    basicobjects.cpp \
+    vertexparaedit.cpp \
+    sphereparaedit.cpp \
+    triparaedit.cpp \
+    planeparaedit.cpp \
+    springparaedit.cpp
 
 #SOURCES += application/camera_roam.cpp \
 #    application/imageio.cpp \
@@ -61,7 +69,13 @@ HEADERS  += someenginmainwindow.h \
     essentialparaedit.h \
     essentialpara.h \
     basicobjects.h \
-    aboutdialog.h
+    aboutdialog.h \
+    materialparaedit.h \
+    vertexparaedit.h \
+    sphereparaedit.h \
+    triparaedit.h \
+    planeparaedit.h \
+    springparaedit.h
 
 #HEADERS  += include/GL/glew.h \
 #    include/png.h \
@@ -135,7 +149,13 @@ HEADERS  += someenginmainwindow.h \
 
 FORMS    += someenginmainwindow.ui \
     essentialparaedit.ui \
-    aboutdialog.ui
+    aboutdialog.ui \
+    materialparaedit.ui \
+    vertexparaedit.ui \
+    sphereparaedit.ui \
+    triparaedit.ui \
+    planeparaedit.ui \
+    springparaedit.ui
 
 #LIBS += -L$$PWD/lib/ -lglew32 \
 #        -L$$PWD/lib/ -llibpng

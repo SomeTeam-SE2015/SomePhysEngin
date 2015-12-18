@@ -12,8 +12,10 @@ class SceneGeneratorTest: public QPlainTextEdit
     Q_OBJECT
 public:
     explicit SceneGeneratorTest(QWidget *parent = 0);
-    void reset_scene(const QString& scene_content);
     void update();
+
+public slots:
+    void reset_scene(const QString& scene_content);
 };
 
 #endif // SCENEGENERATORTEST_H

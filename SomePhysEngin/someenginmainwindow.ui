@@ -20,19 +20,115 @@
       <item>
        <widget class="QGroupBox" name="groupBox">
         <property name="title">
-         <string>设置</string>
+         <string>Settings</string>
         </property>
         <widget class="QPushButton" name="pushButton">
          <property name="geometry">
           <rect>
            <x>50</x>
-           <y>200</y>
+           <y>30</y>
            <width>161</width>
            <height>51</height>
           </rect>
          </property>
          <property name="text">
           <string>Essential parameters</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>100</y>
+           <width>161</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Choose Materials</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>170</y>
+           <width>161</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Add Vertex</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>240</y>
+           <width>161</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Add Sphere</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>310</y>
+           <width>161</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Add Triangle</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>380</y>
+           <width>161</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Add Plane</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_7">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>450</y>
+           <width>161</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Add Spring</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_8">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>520</y>
+           <width>221</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Save and Run</string>
          </property>
         </widget>
        </widget>
@@ -109,12 +205,12 @@
   </action>
   <action name="load_scene">
    <property name="text">
-    <string>导入scene文件</string>
+    <string>load .scene file</string>
    </property>
   </action>
   <action name="save_scene">
    <property name="text">
-    <string>保存scene文件</string>
+    <string>save .scene file</string>
    </property>
   </action>
   <action name="action">
