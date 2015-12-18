@@ -125,7 +125,7 @@ void SomeEnginMainWindow::on_pushButton_4_clicked()
         double *para = sphereParaEdit.getSpherePara();
         Sphere s;
         QString material = materialList[para[8]];
-        int id = sphereList.size()+1;
+        int id = sphereList.size() + triList.size() + 1;
         s.setSpherePara(para, material, id);
         sphereList.append(s);
     }
