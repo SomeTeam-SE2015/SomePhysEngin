@@ -173,8 +173,8 @@ void SomeEnginMainWindow::on_pushButton_7_clicked()
     {
         springParaEdit.setSpringPara();
         double *para = springParaEdit.getSpringPara();
+        para[6] = para[6]+1;
         para[7] = para[7]+1;
-        para[8] = para[8]+1;
         Spring s;
         s.setSpringPara(para);
         springList.append(s);
@@ -247,7 +247,7 @@ void SomeEnginMainWindow::saveToScene(QString fileName)
     node1.setAttributeNode(node1a);
     root.appendChild(node1);
 
-    node1 = doc.createElement("ambient_color");
+    node1 = doc.createElement("ambient_light");
     node1 = saveColorToNode(doc, node1, essentialPara.ambientLight);
     root.appendChild(node1);
 
@@ -262,6 +262,12 @@ void SomeEnginMainWindow::saveToScene(QString fileName)
 
     node1 = doc.createElement("gravity");
     node1 = savePositionToNode(doc, node1, essentialPara.gravity);
+    root.appendChild(node1);
+
+    node1 = doc.createElement("collision_damping");
+    node1a = doc.createAttribute("v");
+    node1a.setValue(QString("%1").arg(essentialPara.collisionDamping));
+    node1.setAttributeNode(node1a);
     root.appendChild(node1);
 
     if (MaterialChoice[0])

@@ -10,6 +10,12 @@ EssentialParaEdit::EssentialParaEdit(QWidget *parent) :
     ui->setupUi(this);
     for (int i = 0; i < 27; i++)
         para[i] = 0;
+    for (int i = 10; i < 13; i++)
+        para[i] = 0.4;
+    for (int i = 14; i < 17; i++)
+        para[i] = 0.2;
+    for (int i = 20; i < 23; i++)
+        para[i] = 1;
 }
 
 EssentialParaEdit::~EssentialParaEdit()
@@ -50,7 +56,7 @@ void EssentialParaEdit::on_pushButton_clicked()
     QColor color = QColorDialog::getColor(QColor(102,102,102),this,"Edit Color");
     this->para[10] = color.redF();
     this->para[11] = color.greenF();
-    this->para[11] = color.blueF();
+    this->para[12] = color.blueF();
 }
 
 void EssentialParaEdit::on_pushButton_2_clicked()
