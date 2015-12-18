@@ -1,0 +1,39 @@
+<scene>
+    <camera>
+        <fov v="0"/>
+        <near_clip v="0"/>
+        <far_clip v="0"/>
+        <position z="0" x="0" y="0"/>
+        <orientation z="0" a="0" x="0" y="0"/>
+    </camera>
+    <background_color g="0" r="0" b="0"/>
+    <refractive_index v="0"/>
+    <ambient_light g="0" r="0" b="0"/>
+    <point_light>
+        <position z="0" x="0" y="0"/>
+        <color g="0" r="0" b="0"/>
+    </point_light>
+    <gravity z="0" x="0" y="0"/>
+    <collision_damping v="0"/>
+    <material name="green">
+        <ambient g="1" r="0" b="0"/>
+        <diffuse g="1" r="0" b="0"/>
+        <specular g="0" r="0" b="0"/>
+        <refractive_index v="0"/>
+    </material>
+    <material name="sblue">
+        <ambient g="0" r="0" b="1"/>
+        <diffuse g="0" r="0" b="1"/>
+        <specular g="1" r="0" b="1"/>
+        <refractive_index v="0"/>
+    </material>
+    <sphere material="green">
+        <position z="0" x="0" y="0"/>
+        <radius v="1"/>
+        <body>
+            <id i="1"/>
+            <velocity z="0" x="0" y="0"/>
+            <mass v="10"/>
+        </body>
+    </sphere>
+</scene>
