@@ -7,8 +7,6 @@
  * 2015/12
  */
 
-//#include "application/application.hpp"
-#include "application/camera_roam.hpp"
 #include "application/imageio.hpp"
 #include "application/scene_loader.hpp"
 #include "application/opengl.hpp"
