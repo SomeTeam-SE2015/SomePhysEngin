@@ -20,6 +20,7 @@ struct Orientation
 
 struct Color
 {
+    Color(double _r = 0, double _g = 0, double _b = 0);
     double r;
     double g;
     double b;
@@ -49,16 +50,6 @@ struct Material
     double refractive_index;
     QString name;
 };
-
-enum MaterialType {red, sred, green ,sgreen, blue, sblue, mirror};
-
-//typedef Material MaterialRed(Color(1,0,0), Color(1,0,0), Color(0,0,0), 0, QString("red"));
-//typedef Material MaterialSred(Color(1,0,0), Color(1,0,0), Color(1,1,1), 0, QString("sred"));
-//typedef Material MaterialGreen(Color(0,1,0), Color(0,1,0), Color(0,0,0), 0, QString("green"));
-//typedef Material MaterialSGreen(Color(0,1,0), Color(0,1,0), Color(1,1,1), 0, QString("sgreen"));
-//typedef Material MaterialBlue(Color(0,0,1), Color(0,0,1), Color(0,0,0), 0, QString("blue"));
-//typedef Material MaterialSBlue(Color(0,0,1), Color(0,0,1), Color(0,1,1), 0, QString("sblue"));
-//typedef Material MaterialMirror(Color(0,0,0), Color(0,0,0), Color(1,1,1), 0, QString("mirror"));
 
 struct TexCoord
 {

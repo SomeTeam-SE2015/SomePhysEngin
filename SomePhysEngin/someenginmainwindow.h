@@ -4,7 +4,8 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QList>
-#include <stdio.h>
+#include <QtXml>
+#include <QFile>
 #include "enginviewer.h"
 #include "scenegeneratortest.h"
 #include "essentialpara.h"
@@ -53,6 +54,8 @@ private slots:
 
     void on_pushButton_7_clicked();
 
+    void on_save_scene_triggered();
+
 private:
     Ui::SomeEnginMainWindow *ui;
     QTimer *m_timer;
@@ -73,6 +76,15 @@ private:
     SpringParaEdit springParaEdit;
 
     QStringList getMaterialList();
+    void saveToScene(QStringList material);
+    QDomElement savePositionToNode(QDomDocument doc, QDomElement node, Position position);
+    QDomElement saveColorToNode(QDomDocument doc, QDomElement node, Color color);
+    QDomElement saveMaterialToNode(QDomDocument doc, QDomElement node, Material material);
+    QDomElement saveSphereToNode(QDomDocument doc, QDomElement node, Sphere sphere);
+    QDomElement saveVertexToNode(QDomDocument doc, QDomElement node, Vertex vertex);
+    QDomElement saveTriToNode(QDomDocument doc, QDomElement node, Triangle triangle);
+    QDomElement savePlaneToNode(QDomDocument doc, QDomElement node, Plane plane);
+    QDomElement saveSpringToNode(QDomDocument doc, QDomElement node, Spring spring);
 };
 
 #endif // SOMEENGINMAINWINDOW_H

@@ -31,8 +31,8 @@ void EssentialPara::setEssentialPara(double *parameters)
     this->pointLight.color.g = parameters[21];
     this->pointLight.color.b = parameters[22];
     this->gravity.x = parameters[23];
-    this->gravity.x = parameters[24];
-    this->gravity.x = parameters[25];
+    this->gravity.y = parameters[24];
+    this->gravity.z = parameters[25];
     this->collisionDamping = parameters[26];
 }
 

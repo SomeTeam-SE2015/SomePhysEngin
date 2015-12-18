@@ -70,3 +70,8 @@ void Spring::setSpringPara(double *para)
     body1.id = para[6];
     body2.id = para[7];
 }
+
+Color::Color(double _r, double _g, double _b): r(_r), g(_g), b(_b)
+{
+
+}
