@@ -29,7 +29,7 @@ static const size_t NUM_GL_LIGHTS = 8;
 //void render_scene( const Scene& scene );
 
 EnginViewer::EnginViewer(QWidget *parent) : QOpenGLWidget(parent),
-    width(DEFAULT_WIDTH), height(DEFAULT_HEIGHT), trackball(width, height),
+    width(DEFAULT_WIDTH), height(DEFAULT_HEIGHT), running(false), trackball(width, height),
     pressed_button(Qt::NoButton)
 {
 }
@@ -37,6 +37,7 @@ EnginViewer::EnginViewer(QWidget *parent) : QOpenGLWidget(parent),
 void EnginViewer::initializeGL()
 {
     initializeOpenGLFunctions();
+    /*
     FILE* file = fopen( "scenes/spring_rotation.scene", "rb" );
     if ( !load_scene( &scene, file ) ) {
         QMessageBox::warning(this, "engin-demo","Error loading scene",
@@ -50,7 +51,7 @@ void EnginViewer::initializeGL()
                              QMessageBox::Ok);
         return;
     }
-    trackball.init(scene.camera);
+    trackball.init(scene.camera);*/
 }
 
 void EnginViewer::reset_scene(FILE *file)
@@ -69,6 +70,7 @@ void EnginViewer::reset_scene(FILE *file)
         return;
     }
     trackball.init(scene.camera);
+    running = true;
 }
 
 void EnginViewer::reset_scene(const QString& scene_name)
@@ -88,6 +90,7 @@ void EnginViewer::reset_scene(const QString& scene_name)
         return;
     }
     trackball.init(scene.camera);
+    running = true;
 }
 
 void EnginViewer::resizeGL(int w, int h)
@@ -99,6 +102,8 @@ void EnginViewer::resizeGL(int w, int h)
 
 void EnginViewer::paintGL()
 {
+    if (!running)
+        return;
     update_scene( 1.0 / fps );
     glViewport( 0, 0, width, height );
     // fix camera aspect

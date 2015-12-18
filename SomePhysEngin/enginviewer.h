@@ -41,6 +41,7 @@ private:
     int height, width;
     double speed;
     bool pause;
+    bool running;
     _SomeEngin::TrackBall trackball;
     Qt::MouseButton pressed_button;
 
