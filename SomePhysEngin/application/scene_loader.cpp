@@ -582,7 +582,7 @@ bool TiXmlparser(Scene* scene, const TiXmlElement* root)
             check_mem(spring);
             parse_spring(bodies, elem, spring);
             scene->get_physics()->add_spring(spring);
-            elem = elem->NextSiblingElement(STR_SPRING);
+            elem = elem->NextSiblingElement(STR_SQSPRING);
         }
 
     } catch ( std::bad_alloc const& ) {
