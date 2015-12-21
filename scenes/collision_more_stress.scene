@@ -1,0 +1,1541 @@
+
+<scene>
+    <camera>
+        <fov v=".785"/>
+        <near_clip v=".01"/>
+        <far_clip v="200.0"/>
+        <position x="0.0" y="12.0" z="45.0"/>
+        <orientation a="0.0" x="0.0" y="-1.0" z="0.0"/>
+    </camera>
+
+    <background_color r="0.4" g="0.4" b="0.4"/>
+
+    <refractive_index v="1.0"/>
+
+    <ambient_light r="0.2" g="0.2" b="0.2"/>
+
+    <point_light>
+        <position x="1.0" y="3.0" z="12.0"/>
+        <color r="1.0" g="1.0" b="1.0"/>
+    </point_light>
+
+    <material name="red">
+        <ambient r="1.0" g="0.0" b="0.0"/>
+        <diffuse r="1.0" g="0.0" b="0.0"/>
+        <specular r="0.0" g="0.0" b="0.0"/>
+        <refractive_index v="0.0"/>
+    </material>
+
+    <material name="sred">
+        <ambient r="1.0" g="0.0" b="0.0"/>
+        <diffuse r="1.0" g="0.0" b="0.0"/>
+        <specular r="1.0" g="1.0" b="1.0"/>
+        <refractive_index v="0.0"/>
+    </material>
+
+    <material name="green">
+        <ambient r="0.0" g="1.0" b="0.0"/>
+        <diffuse r="0.0" g="1.0" b="0.0"/>
+        <specular r="0.0" g="0.0" b="0.0"/>
+        <refractive_index v="0.0"/>
+    </material>
+
+    <material name="sgreen">
+        <ambient r="0.0" g="1.0" b="0.0"/>
+        <diffuse r="0.0" g="1.0" b="0.0"/>
+        <specular r="1.0" g="1.0" b="1.0"/>
+        <refractive_index v="0.0"/>
+    </material>
+
+    <material name="blue">
+        <ambient r="0.0" g="0.0" b="1.0"/>
+        <diffuse r="0.0" g="0.0" b="1.0"/>
+        <specular r="0.0" g="0.0" b="0.0"/>
+        <refractive_index v="0.0"/>
+    </material>
+
+    <material name="sblue">
+        <ambient r="0.0" g="0.0" b="1.0"/>
+        <diffuse r="0.0" g="0.0" b="1.0"/>
+        <specular r="0.0" g="1.0" b="1.0"/>
+        <refractive_index v="0.0"/>
+    </material>
+
+
+    <sphere material="sred">
+        <position x="16.0" y="28.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="1"/>
+            <velocity x="10.91" y="10.36" z="27.97"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="16.0" y="28.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="2"/>
+            <velocity x="99.31" y="35.94" z="6.55"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="16.0" y="28.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="3"/>
+            <velocity x="75.60" y="76.60" z="44.69"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="16.0" y="28.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="4"/>
+            <velocity x="97.79" y="92.26" z="32.92"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="16.0" y="28.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="5"/>
+            <velocity x="7.44" y="49.64" z="76.47"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="16.0" y="20.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="6"/>
+            <velocity x="45.20" y="44.20" z="68.93"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="16.0" y="20.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="7"/>
+            <velocity x="5.98" y="58.09" z="62.21"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="16.0" y="20.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="8"/>
+            <velocity x="18.56" y="49.23" z="83.78"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="16.0" y="20.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="9"/>
+            <velocity x="93.07" y="17.96" z="74.44"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="16.0" y="20.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="10"/>
+            <velocity x="86.55" y="37.31" z="28.04"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="16.0" y="12.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="11"/>
+            <velocity x="59.29" y="92.99" z="48.56"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="16.0" y="12.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="12"/>
+            <velocity x="90.48" y="99.05" z="96.68"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="16.0" y="12.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="13"/>
+            <velocity x="92.85" y="81.30" z="46.69"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="16.0" y="12.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="14"/>
+            <velocity x="72.91" y="70.92" z="37.53"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="16.0" y="12.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="15"/>
+            <velocity x="31.48" y="44.27" z="52.74"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="16.0" y="4.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="16"/>
+            <velocity x="17.93" y="77.27" z="87.78"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="16.0" y="4.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="17"/>
+            <velocity x="70.02" y="87.90" z="29.02"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="16.0" y="4.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="18"/>
+            <velocity x="17.26" y="40.54" z="97.79"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="16.0" y="4.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="19"/>
+            <velocity x="80.53" y="23.54" z="76.46"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="16.0" y="4.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="20"/>
+            <velocity x="99.14" y="75.48" z="58.00"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="16.0" y="-4.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="21"/>
+            <velocity x="17.50" y="67.22" z="25.31"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="16.0" y="-4.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="22"/>
+            <velocity x="41.98" y="74.09" z="69.33"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="16.0" y="-4.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="23"/>
+            <velocity x="33.29" y="16.78" z="92.19"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="16.0" y="-4.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="24"/>
+            <velocity x="48.53" y="37.51" z="13.84"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="16.0" y="-4.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="25"/>
+            <velocity x="41.78" y="55.97" z="10.02"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="28.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="26"/>
+            <velocity x="1.71" y="36.04" z="71.30"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="28.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="27"/>
+            <velocity x="45.17" y="39.81" z="0.67"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="28.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="28"/>
+            <velocity x="66.85" y="27.44" z="72.94"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="8.0" y="28.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="29"/>
+            <velocity x="20.79" y="94.76" z="22.17"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="28.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="30"/>
+            <velocity x="60.99" y="70.60" z="99.30"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="20.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="31"/>
+            <velocity x="29.60" y="48.39" z="2.53"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="20.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="32"/>
+            <velocity x="75.57" y="39.80" z="74.25"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="20.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="33"/>
+            <velocity x="94.00" y="60.53" z="47.74"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="20.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="34"/>
+            <velocity x="34.64" y="91.32" z="83.43"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="20.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="35"/>
+            <velocity x="5.26" y="34.10" z="67.87"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="8.0" y="12.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="36"/>
+            <velocity x="29.37" y="74.39" z="15.76"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="8.0" y="12.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="37"/>
+            <velocity x="58.74" y="63.14" z="97.21"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="8.0" y="12.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="38"/>
+            <velocity x="53.92" y="94.47" z="33.08"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="8.0" y="12.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="39"/>
+            <velocity x="48.36" y="97.75" z="55.59"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="8.0" y="12.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="40"/>
+            <velocity x="39.00" y="98.73" z="88.41"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="4.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="41"/>
+            <velocity x="79.82" y="9.91" z="38.62"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="8.0" y="4.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="42"/>
+            <velocity x="9.17" y="28.84" z="51.16"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="8.0" y="4.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="43"/>
+            <velocity x="61.54" y="79.10" z="2.77"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="4.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="44"/>
+            <velocity x="86.05" y="62.70" z="83.64"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="4.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="45"/>
+            <velocity x="77.00" y="58.73" z="71.76"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="8.0" y="-4.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="46"/>
+            <velocity x="19.82" y="16.75" z="59.09"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="-4.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="47"/>
+            <velocity x="37.39" y="87.26" z="19.35"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="8.0" y="-4.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="48"/>
+            <velocity x="71.81" y="2.03" z="47.14"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="8.0" y="-4.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="49"/>
+            <velocity x="45.07" y="54.64" z="93.20"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="8.0" y="-4.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="50"/>
+            <velocity x="21.06" y="8.46" z="1.72"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="0.0" y="28.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="51"/>
+            <velocity x="40.22" y="25.51" z="24.82"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="0.0" y="28.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="52"/>
+            <velocity x="1.01" y="59.69" z="80.09"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="0.0" y="28.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="53"/>
+            <velocity x="6.92" y="9.34" z="47.33"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="0.0" y="28.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="54"/>
+            <velocity x="98.04" y="85.52" z="84.84"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="0.0" y="28.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="55"/>
+            <velocity x="49.78" y="48.55" z="48.54"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="0.0" y="20.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="56"/>
+            <velocity x="5.62" y="19.14" z="17.30"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="0.0" y="20.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="57"/>
+            <velocity x="9.19" y="29.76" z="73.75"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="0.0" y="20.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="58"/>
+            <velocity x="64.66" y="59.40" z="76.59"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="0.0" y="20.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="59"/>
+            <velocity x="87.44" y="60.40" z="80.10"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="0.0" y="20.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="60"/>
+            <velocity x="2.89" y="21.39" z="19.50"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="0.0" y="12.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="61"/>
+            <velocity x="86.70" y="28.37" z="96.53"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="0.0" y="12.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="62"/>
+            <velocity x="34.50" y="25.12" z="94.65"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="0.0" y="12.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="63"/>
+            <velocity x="36.89" y="38.17" z="51.82"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="0.0" y="12.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="64"/>
+            <velocity x="31.39" y="73.21" z="14.82"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="0.0" y="12.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="65"/>
+            <velocity x="69.17" y="93.38" z="70.26"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="0.0" y="4.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="66"/>
+            <velocity x="75.39" y="72.59" z="44.35"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="0.0" y="4.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="67"/>
+            <velocity x="42.19" y="86.50" z="19.35"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="0.0" y="4.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="68"/>
+            <velocity x="57.87" y="82.43" z="51.10"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="0.0" y="4.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="69"/>
+            <velocity x="42.26" y="71.81" z="27.07"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="0.0" y="4.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="70"/>
+            <velocity x="46.58" y="66.26" z="20.76"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="0.0" y="-4.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="71"/>
+            <velocity x="60.15" y="53.32" z="63.12"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="0.0" y="-4.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="72"/>
+            <velocity x="4.62" y="28.87" z="28.79"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="0.0" y="-4.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="73"/>
+            <velocity x="35.67" y="44.53" z="69.44"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="0.0" y="-4.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="74"/>
+            <velocity x="31.87" y="91.11" z="49.23"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="0.0" y="-4.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="75"/>
+            <velocity x="56.57" y="90.01" z="98.47"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-8.0" y="28.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="76"/>
+            <velocity x="84.57" y="43.34" z="87.47"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-8.0" y="28.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="77"/>
+            <velocity x="88.72" y="85.71" z="69.14"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-8.0" y="28.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="78"/>
+            <velocity x="18.46" y="64.93" z="26.19"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-8.0" y="28.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="79"/>
+            <velocity x="56.53" y="8.90" z="49.65"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-8.0" y="28.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="80"/>
+            <velocity x="90.23" y="17.09" z="6.11"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-8.0" y="20.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="81"/>
+            <velocity x="14.59" y="82.92" z="52.57"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-8.0" y="20.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="82"/>
+            <velocity x="69.36" y="0.19" z="30.68"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-8.0" y="20.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="83"/>
+            <velocity x="46.05" y="31.36" z="39.96"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-8.0" y="20.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="84"/>
+            <velocity x="34.54" y="69.77" z="95.18"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-8.0" y="20.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="85"/>
+            <velocity x="53.55" y="89.07" z="14.46"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-8.0" y="12.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="86"/>
+            <velocity x="38.18" y="12.47" z="55.40"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-8.0" y="12.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="87"/>
+            <velocity x="20.58" y="43.81" z="42.27"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-8.0" y="12.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="88"/>
+            <velocity x="76.42" y="64.29" z="2.59"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-8.0" y="12.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="89"/>
+            <velocity x="38.25" y="92.70" z="84.89"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-8.0" y="12.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="90"/>
+            <velocity x="86.12" y="76.17" z="61.60"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-8.0" y="4.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="91"/>
+            <velocity x="16.64" y="96.22" z="16.93"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-8.0" y="4.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="92"/>
+            <velocity x="85.16" y="93.31" z="9.71"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-8.0" y="4.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="93"/>
+            <velocity x="42.46" y="78.65" z="77.90"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-8.0" y="4.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="94"/>
+            <velocity x="88.37" y="31.36" z="86.06"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-8.0" y="4.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="95"/>
+            <velocity x="37.80" y="22.08" z="22.21"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-8.0" y="-4.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="96"/>
+            <velocity x="6.52" y="36.66" z="3.54"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-8.0" y="-4.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="97"/>
+            <velocity x="86.52" y="2.14" z="7.15"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-8.0" y="-4.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="98"/>
+            <velocity x="59.13" y="9.01" z="94.04"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-8.0" y="-4.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="99"/>
+            <velocity x="54.15" y="0.87" z="37.06"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-8.0" y="-4.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="100"/>
+            <velocity x="72.35" y="40.56" z="23.75"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-16.0" y="28.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="101"/>
+            <velocity x="22.09" y="83.54" z="8.84"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-16.0" y="28.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="102"/>
+            <velocity x="1.34" y="5.92" z="51.79"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-16.0" y="28.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="103"/>
+            <velocity x="12.86" y="62.75" z="70.83"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-16.0" y="28.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="104"/>
+            <velocity x="88.83" y="67.72" z="38.72"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-16.0" y="28.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="105"/>
+            <velocity x="29.01" y="59.53" z="76.99"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-16.0" y="20.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="106"/>
+            <velocity x="34.58" y="71.08" z="18.14"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-16.0" y="20.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="107"/>
+            <velocity x="26.88" y="65.18" z="53.26"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-16.0" y="20.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="108"/>
+            <velocity x="40.24" y="90.33" z="82.28"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-16.0" y="20.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="109"/>
+            <velocity x="41.43" y="14.42" z="68.83"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-16.0" y="20.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="110"/>
+            <velocity x="32.33" y="28.48" z="53.83"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-16.0" y="12.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="111"/>
+            <velocity x="80.96" y="18.62" z="67.21"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-16.0" y="12.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="112"/>
+            <velocity x="24.97" y="95.81" z="19.44"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-16.0" y="12.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="113"/>
+            <velocity x="82.23" y="33.18" z="77.56"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-16.0" y="12.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="114"/>
+            <velocity x="55.24" y="52.75" z="89.45"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-16.0" y="12.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="115"/>
+            <velocity x="22.66" y="94.70" z="41.27"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-16.0" y="4.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="116"/>
+            <velocity x="8.96" y="22.03" z="1.23"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-16.0" y="4.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="117"/>
+            <velocity x="22.96" y="96.30" z="3.70"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-16.0" y="4.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="118"/>
+            <velocity x="28.47" y="97.85" z="1.58"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-16.0" y="4.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="119"/>
+            <velocity x="56.11" y="95.17" z="98.70"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-16.0" y="4.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="120"/>
+            <velocity x="53.03" y="79.46" z="92.53"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-16.0" y="-4.0" z="16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="121"/>
+            <velocity x="43.76" y="73.87" z="58.43"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sblue">
+        <position x="-16.0" y="-4.0" z="8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="122"/>
+            <velocity x="25.38" y="46.31" z="40.91"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-16.0" y="-4.0" z="0.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="123"/>
+            <velocity x="98.12" y="51.81" z="36.48"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sred">
+        <position x="-16.0" y="-4.0" z="-8.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="124"/>
+            <velocity x="33.66" y="43.01" z="54.57"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <sphere material="sgreen">
+        <position x="-16.0" y="-4.0" z="-16.0"/>
+        <radius v="0.5"/>
+        <body>
+            <id i="125"/>
+            <velocity x="80.68" y="31.27" z="22.39"/>
+            <mass v="1.0"/>
+        </body>
+    </sphere>
+    
+    <vertex name="p1" material="red">
+        <position x="16.0" y="-4.0" z="-16.0"/>
+        <normal x="0.0" y="1.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p2" material="red">
+        <position x="-16.0" y="-4.0" z="-16.0"/>
+        <normal x="0.0" y="1.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p3" material="red">
+        <position x="16.0" y="-4.0" z="16.0"/>
+        <normal x="0.0" y="1.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p4" material="red">
+        <position x="-16.0" y="-4.0" z="16.0"/>
+        <normal x="0.0" y="1.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+    
+    <triangle material="red">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="p1"/>
+        <vertex name="p2"/>
+        <vertex name="p3"/>
+        <body>
+            <id i="6"/>
+        </body>
+    </triangle>
+    
+    <triangle material="red">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="p3"/>
+        <vertex name="p2"/>
+        <vertex name="p4"/>
+        <body>
+            <id i="7"/>
+        </body>
+    </triangle>
+    
+    <vertex name="p5" material="red">
+        <position x="16.0" y="28.0" z="-16.0"/>
+        <normal x="0.0" y="-1.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p6" material="red">
+        <position x="-16.0" y="28.0" z="-16.0"/>
+        <normal x="0.0" y="-1.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p7" material="red">
+        <position x="16.0" y="28.0" z="16.0"/>
+        <normal x="0.0" y="-1.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p8" material="red">
+        <position x="-16.0" y="28.0" z="16.0"/>
+        <normal x="0.0" y="-1.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+    
+    <triangle material="red">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="p5"/>
+        <vertex name="p7"/>
+        <vertex name="p6"/>
+        <body>
+            <id i="8"/>
+        </body>
+    </triangle>
+    
+    <triangle material="red">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="p7"/>
+        <vertex name="p8"/>
+        <vertex name="p6"/>
+        <body>
+            <id i="9"/>
+        </body>
+    </triangle>
+
+    <vertex name="p9" material="blue">
+        <position x="16.0" y="-4.0" z="-16.0"/>
+        <normal x="-1.0" y="0.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p10" material="blue">
+        <position x="16.0" y="-4.0" z="16.0"/>
+        <normal x="-1.0" y="0.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p11" material="blue">
+        <position x="16.0" y="28.0" z="16.0"/>
+        <normal x="-1.0" y="0.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p12" material="blue">
+        <position x="16.0" y="28.0" z="-16.0"/>
+        <normal x="-1.0" y=".0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+
+    <triangle material="blue">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="p9"/>
+        <vertex name="p10"/>
+        <vertex name="p11"/>
+        <body>
+            <id i="10"/>
+        </body>
+    </triangle>
+    
+    <triangle material="blue">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="p11"/>
+        <vertex name="p12"/>
+        <vertex name="p9"/>
+        <body>
+            <id i="11"/>
+        </body>
+    </triangle>
+        
+    <vertex name="p13" material="blue">
+        <position x="-16.0" y="-4.0" z="-16.0"/>
+        <normal x="1.0" y="0.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p14" material="blue">
+        <position x="-16.0" y="-4.0" z="16.0"/>
+        <normal x="1.0" y="0.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p15" material="blue">
+        <position x="-16.0" y="28.0" z="16.0"/>
+        <normal x="1.0" y="0.0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p16" material="blue">
+        <position x="-16.0" y="28.0" z="-16.0"/>
+        <normal x="1.0" y=".0" z="0.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+
+    <triangle material="blue">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="p13"/>
+        <vertex name="p15"/>
+        <vertex name="p14"/>
+        <body>
+            <id i="12"/>
+        </body>
+    </triangle>
+    
+    <triangle material="blue">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="p16"/>
+        <vertex name="p15"/>
+        <vertex name="p13"/>
+        <body>
+            <id i="13"/>
+        </body>
+    </triangle>
+        
+    <vertex name="p17" material="green">
+        <position x="-16.0" y="28.0" z="-16.0"/>
+        <normal x="0.0" y="0.0" z="1.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p18" material="green">
+        <position x="16.0" y="28.0" z="-16.0"/>
+        <normal x="0.0" y="0.0" z="1.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p19" material="green">
+        <position x="-16.0" y="-4.0" z="-16.0"/>
+        <normal x="0.0" y="0.0" z="1.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+        
+    <vertex name="p20" material="green">
+        <position x="16.0" y="-4.0" z="-16.0"/>
+        <normal x="0.0" y=".0" z="1.0"/>
+        <tex_coord u="0.0" v="0.0"/>
+    </vertex>
+
+    <triangle material="green">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="p17"/>
+        <vertex name="p19"/>
+        <vertex name="p18"/>
+        <body>
+            <id i="14"/>
+        </body>
+    </triangle>
+    
+    <triangle material="blue">
+        <position x="0.0" y="0.0" z="0.0"/>
+        <vertex name="p20"/>
+        <vertex name="p18"/>
+        <vertex name="p19"/>
+        <body>
+            <id i="14"/>
+        </body>
+    </triangle>
+
+    <plane_body>
+        <id i="15"/>
+        <position x="0.0" y="0.0" z="16.0"/>
+        <normal x="0.0" y="0.0" z="-1.0"/>
+    </plane_body>
+</scene>
+
