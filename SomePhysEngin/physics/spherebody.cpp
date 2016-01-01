@@ -22,7 +22,7 @@ SphereBody::SphereBody( Sphere* geom )
 	torque_static = Vector3::Zero;
 }
 
-Vector3 SphereBody::step_position( real_t dt, real_t motion_damping )//damping ÒÑ°üº¬ dt?!!
+Vector3 SphereBody::step_position( real_t dt, real_t motion_damping )//damping include dt?!!
 {
     // Note: This function is here as a hint for an approach to take towards
     // programming RK4, you should add more functions to help you or change the
@@ -33,7 +33,7 @@ Vector3 SphereBody::step_position( real_t dt, real_t motion_damping )//damping Ò
 	position += delta;
 	velocity += (force + force_static) * (dt / mass) - velocity * (dt * motion_damping);
 	//velocity *= (1 - motion_damping);
-	position += velocity * dt;
+    //position += velocity * dt;
     return delta;
 }
 

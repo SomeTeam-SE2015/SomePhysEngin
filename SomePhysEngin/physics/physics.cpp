@@ -27,11 +27,26 @@ void Physics::step( real_t dt )
     // it
 
 	// collisions
-	//std::cout << "num planes" << num_planes() << std::endl;
+    //std::cout << "num planes" << num_planes() << std::endl;
 	for (SphereList::iterator collider = spheres.begin();
 		collider != spheres.end(); collider++)
 	{
-		//if ( (*collider)->position.y <= 0 )
+        for (PlaneList::iterator collidee = planes.begin();
+            collidee != planes.end(); collidee++)
+        {
+            if (collides(**collider, **collidee, collision_damping)) {
+                //std::cout << "Plane" << (*collidee)->id << ":" << (*collidee)->position << std::endl;
+            }
+
+        }
+        for (TriangleList::iterator collidee = triangles.begin();
+            collidee != triangles.end(); collidee++)
+        {
+            if (collides(**collider, **collidee, collision_damping)) {
+                //std::cout << "Tri" << (*collidee)->id << ":" << (*collider)->velocity << std::endl;
+            }
+        }
+
 		for (SphereList::iterator collidee = spheres.begin();
 			collidee != spheres.end(); collidee++)
 		{
@@ -43,29 +58,14 @@ void Physics::step( real_t dt )
 					//break;
 				}
 			}
-		}
-		for (PlaneList::iterator collidee = planes.begin();
-			collidee != planes.end(); collidee++)
-		{
-			if (collides(**collider, **collidee, collision_damping)) {
-				//std::cout << "Plane" << (*collidee)->id << ":" << (*collidee)->position << std::endl;
-			}
-			
-		}
-		for (TriangleList::iterator collidee = triangles.begin();
-			collidee != triangles.end(); collidee++)
-		{
-			if (collides(**collider, **collidee, collision_damping)) {
-				//std::cout << "Tri" << (*collidee)->id << ":" << (*collider)->velocity << std::endl;
-			}
-		}
+        }
 	}
 
 	// position evolusion: RK4
 	/*for (size_t n = 0; n < spheres.size(); n++)
 	{
 		update_force();
-		spheres[n]->step_position(dt, 0);
+        spheres[n]->step_position(dt, 0);
 	}*/
 	for (size_t n = 0; n < spheres.size(); n++)
 	{
