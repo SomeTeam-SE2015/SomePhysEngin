@@ -52,7 +52,8 @@ SOURCES += main.cpp \
 	sphereparaedit.cpp \
 	triparaedit.cpp \
 	planeparaedit.cpp \
-	springparaedit.cpp
+	springparaedit.cpp \
+    kdtree/kdtree.cpp
 
 HEADERS  += someenginmainwindow.h \
 	math/camera.hpp \
@@ -98,7 +99,8 @@ HEADERS  += someenginmainwindow.h \
 	sphereparaedit.h \
 	triparaedit.h \
 	planeparaedit.h \
-	springparaedit.h
+	springparaedit.h \
+    kdtree/kdtree.h
 
 FORMS	+= someenginmainwindow.ui \
 	essentialparaedit.ui \
